@@ -6,11 +6,27 @@
 	
 <struts>
     <include file="struts-default.xml"/>
-    <package name="BOOK" extends="struts-default">
+      
+    <package name="REG" extends="struts-default">
+    	<!-- 
 	     <action name="find-book" class="action.BookDB" method="find">
 	      	<result name="SUCCESS">/WEB-INF/pages/list.jsp</result>
 	      	<result name="NOPERSON">/WEB-INF/pages/no-person.jsp</result>
 	     </action>
-	     
+	     -->
+	     <action name="RegSwitch">
+	      	<result>/WEB-INF/pages/Register/RegSwitch.jsp</result>
+	     </action>
+	     <action name="RegDev">
+	      	<result>/WEB-INF/pages/Register/Developer.jsp</result>
+	     </action>
+	     <action name="RegNeed">
+	      	<result>/WEB-INF/pages/Register/Needer.jsp</result>
+	     </action>
+	     <action name="RegDevSubmit" class="register.RegDeveloper" method="register">
+	      	<result name="SUCCESS">index.jsp</result>
+	      	<result name="REGISTED">/WEB-INF/pages/Register/Developer.jsp</result>
+	     </action>
     </package>
+    
 </struts>
