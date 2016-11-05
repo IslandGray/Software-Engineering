@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>开发者登录</title>
+	<title>需求商登录</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -86,13 +86,13 @@
 			</nav>
 			<div class="row clearfix">
 				<div class="col-md-8 column">
-					<form class="form-horizontal" action="LoginDevSubmit.action" method="post" enctype="multipart/form-data">
+					<form class="form-horizontal" action="LoginNeedSubmit.action" method="post" enctype="multipart/form-data">
 					  <fieldset>
-					    <legend>开发者登陆</legend>
+					    <legend>需求商登陆</legend>
 					    <div class="form-group">
-					      <label for="inputAccount" class="col-lg-2 control-label">账号</label>
+					      <label for="inputAccount" class="col-lg-2 control-label">邮箱账号</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAccount" placeholder="手机号/邮箱">
+					        <input type="email" class="form-control" name="inputAccount" placeholder="邮箱">
 					      </div>
 					    </div>
 					    <div class="form-group">

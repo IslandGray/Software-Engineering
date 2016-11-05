@@ -56,7 +56,7 @@
 					        <button type="submit" class="btn btn-default">Submit</button>
 					      </form>
 					      <ul class="nav navbar-nav navbar-right">
-					        <li><a href="#">登录</a></li>
+					        <li><a href="LoginSwitch.action">登录</a></li>
 					        <li><a href="RegSwitch.action">注册</a></li>
 					      </ul>
 				</div>

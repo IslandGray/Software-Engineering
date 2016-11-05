@@ -28,7 +28,7 @@ public class RegNeeder {
 		          "jdbc:mysql://localhost:3306/JOB","root","wcp19970221");
 		      System.out.println("Success connect Mysql server!");
 		      Statement stmt = connect.createStatement();
-		      ResultSet rs = stmt.executeQuery("select * from Needer where Company='"+inputCompany+"'");
+		      ResultSet rs = stmt.executeQuery("select * from Needer where Company='"+inputCompany+"' or Email='"+inputEmail+"'");
 		      if(rs.next()){
 		    	  System.out.print("Already Registed!");
 		    	  return "REGISTED";

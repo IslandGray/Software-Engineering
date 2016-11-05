@@ -32,5 +32,23 @@
 	      	<result name="REGISTED">/WEB-INF/pages/Register/Needer.jsp</result>
 	     </action>
     </package>
-    
+    <package name="LOGIN" extends="struts-default">
+    	<action name="LoginSwitch">
+	      	<result>/WEB-INF/pages/Login/LoginSwitch.jsp</result>
+	    </action>
+	    <action name="LoginDev">
+	      	<result>/WEB-INF/pages/Login/DevLogin.jsp</result>
+	    </action>
+	    <action name="LoginNeed">
+	      	<result>/WEB-INF/pages/Login/NeedLogin.jsp</result>
+	    </action>
+	    <action name="LoginDevSubmit" class="login.LoginDev" method="login">
+	      	<result name="SUCCESS">index.jsp</result>
+	      	<result name="FAILED">/WEB-INF/pages/Login/DevLogin.jsp</result>
+	    </action>
+	    <action name="LoginNeedSubmit" class="login.LoginNeed" method="login">
+	      	<result name="SUCCESS">index.jsp</result>
+	      	<result name="FAILED">/WEB-INF/pages/Login/NeedLogin.jsp</result>
+	    </action>
+    </package>
 </struts>

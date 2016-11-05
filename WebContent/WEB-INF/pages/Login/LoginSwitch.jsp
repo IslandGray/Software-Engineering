@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>开发者登录</title>
+	<title>登录</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -18,7 +18,12 @@
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.jsp">Brand</a>
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+					 <span class="sr-only">Toggle navigation</span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+					 </button> <a class="navbar-brand" href="index.jsp">Brand</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
@@ -85,66 +90,33 @@
 				</div>
 			</nav>
 			<div class="row clearfix">
-				<div class="col-md-8 column">
-					<form class="form-horizontal" action="LoginDevSubmit.action" method="post" enctype="multipart/form-data">
-					  <fieldset>
-					    <legend>开发者登陆</legend>
-					    <div class="form-group">
-					      <label for="inputAccount" class="col-lg-2 control-label">账号</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAccount" placeholder="手机号/邮箱">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputPassword" class="col-lg-2 control-label">密码</label>
-					      <div class="col-lg-10">
-					        <input type="password" class="form-control" name="inputPassword" placeholder="Password">
-					      </div>
-					    </div>
-					    
-					    <div class="form-group">
-					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-default">Reset</button>
-					        <button type="submit" class="btn btn-primary">Submit</button>
-					      </div>
-					    </div>
-					    
-					  </fieldset>
-					</form>
+				<div class="col-md-6 column">
+					<div class="jumbotron well">
+						<h1>
+							开发者
+						</h1>
+						<p>
+							This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+						</p>
+						<p>
+							 <a class="btn btn-primary btn-large" href="LoginDev.action">登录为开发者</a>
+						</p>
+					</div>
 				</div>
-				<div class="col-md-4 column">
-					<dl>
-						<dt>
-							Description lists
-						</dt>
-						<dd>
-							A description list is perfect for defining terms.
-						</dd>
-						<dt>
-							Euismod
-						</dt>
-						<dd>
-							Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-						</dd>
-						<dd>
-							Donec id elit non mi porta gravida at eget metus.
-						</dd>
-						<dt>
-							Malesuada porta
-						</dt>
-						<dd>
-							Etiam porta sem malesuada magna mollis euismod.
-						</dd>
-						<dt>
-							Felis euismod semper eget lacinia
-						</dt>
-						<dd>
-							Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-						</dd>
-					</dl>
+				<div class="col-md-6 column">
+					<div class="jumbotron well">
+						<h1>
+							需求商
+						</h1>
+						<p>
+							This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+						</p>
+						<p>
+							 <a class="btn btn-primary btn-large" href="LoginNeed.action">登录为需求商</a>
+						</p>
+					</div>
 				</div>
 			</div>
-			
 		</div>
 	</div>
 </div>

@@ -32,7 +32,7 @@ public class RegDeveloper {
 		          "jdbc:mysql://localhost:3306/JOB","root","wcp19970221");
 		      System.out.println("Success connect Mysql server!");
 		      Statement stmt = connect.createStatement();
-		      ResultSet rs = stmt.executeQuery("select * from Developer where Account='"+inputAccount+"'");
+		      ResultSet rs = stmt.executeQuery("select * from Developer where Account='"+inputAccount+"' or ID='"+inputID+"'");
 		      if(rs.next()){
 		    	  System.out.print("Already Registed!");
 		    	  return "REGISTED";
