@@ -5,22 +5,21 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>需求商注册</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>需求商注册</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <!-- 可选的Bootstrap主题文件（一般不用引入） -->
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+	<script type="text/javascript" src="<%=request.getContextPath()%>/pages/Register/geo.js" charset="gbk"></script>
 </head>
-<body>
+<body onload="setup();preselect('北京市');promptinfo();">
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.jsp">Brand</a>
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Brand</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
@@ -88,80 +87,38 @@
 			</nav>
 			<div class="row clearfix">
 				<div class="col-md-8 column">
-					<form class="form-horizontal" action="RegNeedSubmit.action" method="post" enctype="multipart/form-data">
-					  <fieldset>
-					    <legend>公司信息</legend>
-					    <div class="form-group">
-					      <label for="inputCompany" class="col-lg-2 control-label">企业全名</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputCompany" placeholder="Company">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputLocation" class="col-lg-2 control-label">所在地</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputLocation" placeholder="Location">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputAttention" class="col-lg-2 control-label">联系人</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAttention" placeholder="Attention">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputNumber" class="col-lg-2 control-label">联系电话</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputNumber" placeholder="Number">
-					      </div>
-					    </div>
-					    <legend>账户注册信息</legend>
-					    <div class="form-group">
-					      <label for="inputAccount" class="col-lg-2 control-label">登录名</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAccount" placeholder="Account">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputEmail" class="col-lg-2 control-label">邮箱</label>
-					      <div class="col-lg-10">
-					        <input type="email" class="form-control" name="inputEmail" placeholder="Email">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputPassword" class="col-lg-2 control-label">密码</label>
-					      <div class="col-lg-10">
-					        <input type="password" class="form-control" name="inputPassword" placeholder="Password">
-					      </div>
-					    </div>
-					    
-					    <!--  
-					    <div class="form-group">
-							 <label for="exampleInputFile" class="col-lg-2 control-label">身份验证</label>
-							 <input type="file" id="exampleInputFile" />
-							 <div class="col-lg-10">
-								<p class="help-block">
-									上传一份有效、清晰的身份证正面照片
-								</p>
-							</div>
+					<form role="form">
+						<div class="form-group">
+							 <label for="exampleInputEmail1">Email address</label><input type="email" class="form-control" id="exampleInputEmail1" />
 						</div>
-					    <div class="form-group">
-					      <label for="textArea" class="col-lg-2 control-label">接受条款</label>
-					      <div class="col-lg-10">
-					        <div class="checkbox">
+						<div class="form-group">
+							 <label for="exampleInputPassword1">Password</label><input type="password" class="form-control" id="exampleInputPassword1" />
+						</div>
+						<!--  
+						<div class="form-group">
+							 <label for="exampleInputFile">File input</label><input type="file" id="exampleInputFile" />
+							<p class="help-block">
+								Example block-level help text here.
+							</p>
+						</div>
+						<div class="checkbox">
 							 <label><input type="checkbox" />Check me out</label>
-							</div>
-					      </div>
-					    </div>
-					    -->
-					    <div class="form-group">
-					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-default">Reset</button>
-					        <button type="submit" class="btn btn-primary">Submit</button>
-					      </div>
-					    </div>
-					    
-					  </fieldset>
+						</div>
+						-->
+						<div class="form-group">
+							<label for="shareip">Location</label>
+							  <select class="form-control" name="province" id="s1">
+						       <option></option>
+						      </select>
+						      <select class="form-control" name="city" id="s2">
+						       <option></option>
+						      </select>
+						      <select class="form-control" name="town" id="s3">
+						       <option></option>
+						      </select>
+						      <input id="address" name="address" type="hidden" value="" />					
+						</div> 
+						<button onclick="alert(promptinfo())"  type="submit" class="btn btn-default">Submit</button>
 					</form>
 				</div>
 				<div class="col-md-4 column">
@@ -196,11 +153,22 @@
 					</dl>
 				</div>
 			</div>
-			
 		</div>
 	</div>
 </div>
 
+	<script>
+	function promptinfo()
+	{
+	  var address = document.getElementById('address').value;
+	  var s1 = document.getElementById('s1').value;
+	  var s2 = document.getElementById('s2').value;
+	  var s3 = document.getElementById('s3').value;
+	  address=""+s1+ s2 + s3;
+	  return address;
+	}
+	 
+	</script>
 
 	<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
     <!-- 可选: 包含 jQuery 库 -->

@@ -117,17 +117,17 @@
 					      </div>
 					    </div>
 					    <div class="form-group">
-					      <label for="inputSex" class="col-lg-2 control-label">性别</label>
+					      <label for="inputS" class="col-lg-2 control-label">性别</label>
 					      <div class="col-lg-10">
 					        <div class="radio">
 					          <label>
-					            <input type="radio" name="inputSexMan" id="inputSexMan" value=0 checked="">
+					            <input type="radio" name="inputSex" id="inputSex" value="男" checked="">
 					            男
 					          </label>
 					        </div>
 					        <div class="radio">
 					          <label>
-					            <input type="radio" name="inputSexWoman" id="inputSexWoman" value=1>
+					            <input type="radio" name="inputSex" id="inputSex" value="女">
 					            女
 					          </label>
 					        </div>

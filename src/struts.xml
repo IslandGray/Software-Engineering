@@ -27,6 +27,10 @@
 	      	<result name="SUCCESS">index.jsp</result>
 	      	<result name="REGISTED">/WEB-INF/pages/Register/Developer.jsp</result>
 	     </action>
+	     <action name="RegNeedSubmit" class="register.RegNeeder" method="register">
+	      	<result name="SUCCESS">index.jsp</result>
+	      	<result name="REGISTED">/WEB-INF/pages/Register/Needer.jsp</result>
+	     </action>
     </package>
     
 </struts>

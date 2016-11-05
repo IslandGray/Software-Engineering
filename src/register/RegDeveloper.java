@@ -14,7 +14,8 @@ public class RegDeveloper {
 	private String inputSexWoman;
 	private String inputAccount;
 	private String inputPassword;
-	private int inputSex;
+	private String inputSex;
+	//private int sex;
 	
 	
 	public String register() throws Exception{
@@ -36,10 +37,10 @@ public class RegDeveloper {
 		    	  System.out.print("Already Registed!");
 		    	  return "REGISTED";
 		      }
-		      if (inputSexMan != null) inputSex=0;
-		      else if (inputSexWoman != null) inputSex=1;
-		      int num=stmt.executeUpdate("insert into Developer values('"+inputName+"','"+inputID+"','"+inputGraduate+"',"+inputSex+",'"+inputAccount+"','"+inputPassword+"')");
-		      if(num>=1)	System.out.print("success add "+num+" records");
+		      //if (inputSex.equals("男")) sex=0;
+		      //else if (inputSex.equals("女")) sex=1;
+		      int num=stmt.executeUpdate("insert into Developer values('"+inputName+"','"+inputID+"','"+inputGraduate+"','"+inputSex+"','"+inputAccount+"','"+inputPassword+"')");
+		      if(num>=1)	System.out.print("success add "+num+" records in Table-Developer");
 		      else	System.out.print("Add data error!");
 		} 
 		catch (Exception e) {
@@ -120,15 +121,14 @@ public class RegDeveloper {
 	}
 
 
-	public int getInputSex() {
+	public String getInputSex() {
 		return inputSex;
 	}
 
 
-	public void setInputSex(int inputSex) {
+	public void setInputSex(String inputSex) {
 		this.inputSex = inputSex;
 	}
-
 	
 	
 }
