@@ -43,12 +43,17 @@
 	      	<result>/WEB-INF/pages/Login/NeedLogin.jsp</result>
 	    </action>
 	    <action name="LoginDevSubmit" class="login.LoginDev" method="login">
-	      	<result name="SUCCESS">index.jsp</result>
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevIndex.jsp</result>
 	      	<result name="FAILED">/WEB-INF/pages/Login/DevLogin.jsp</result>
 	    </action>
 	    <action name="LoginNeedSubmit" class="login.LoginNeed" method="login">
 	      	<result name="SUCCESS">index.jsp</result>
 	      	<result name="FAILED">/WEB-INF/pages/Login/NeedLogin.jsp</result>
+	    </action>
+    </package>
+    <package name="DEV" extends="struts-default">
+    	<action name="returnDevIndex" class="Dev.DevIndex" method="login">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevIndex.jsp</result>
 	    </action>
     </package>
 </struts>
