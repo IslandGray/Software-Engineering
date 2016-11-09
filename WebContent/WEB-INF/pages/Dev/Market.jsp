@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>开发者主页</title>
+	<title>需求市场</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -13,6 +14,7 @@
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
 </head>
 <body>
+
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -27,10 +29,10 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active">
+						<li>
 							 <a href="returnDevIndex.action?inputAccount=${inputAccount}">个人主页</a>
 						</li>
-						<li>
+						<li class="active">
 							 <a href="devtoMarket.action?inputAccount=${inputAccount}">需求市场</a>
 						</li>
 						<li>
@@ -92,34 +94,72 @@
 					</ul>
 				</div>
 			</nav>
-			
+		<div class="row">
+		  <div class="col-lg-10 col-lg-offset-1">
+			<div class="well bs-component">
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+					  <th>任务ID</th>
+				      <th>项目名</th>
+				      <th>委托方</th>
+				      <th>编程语言</th>
+				      <th>平台</th>
+				      <th>学历要求</th>
+				      <th>经验要求</th>
+				      <th>工期</th>
+				      <th>报酬</th>
+				      <th>人数</th>
+				      <th>状态</th>
+					</tr>
+				</thead>
+				<tbody>
+					<s:iterator value="list" id="pro"> 
+						<tr>
+							<td>${pro.id}</td>
+							<td>${pro.name}</td>
+							<td>${pro.needer}</td>
+							<td>${pro.language}</td>
+							<td>${pro.platform}</td>
+							<td>${pro.education}</td>
+							<td>${pro.experience}</td>
+							<td>${pro.time}</td>
+							<td>${pro.price}</td>
+							<td>${pro.num}</td>
+							<td>${pro.status}</td>
+						</tr>
+					</s:iterator> 
+				</tbody>
+			</table>
+		</div></div></div>
+			<ul class="pagination">
+				<li>
+					 <a href="#">Prev</a>
+				</li>
+				<li>
+					 <a href="#">1</a>
+				</li>
+				<li>
+					 <a href="#">2</a>
+				</li>
+				<li>
+					 <a href="#">3</a>
+				</li>
+				<li>
+					 <a href="#">4</a>
+				</li>
+				<li>
+					 <a href="#">5</a>
+				</li>
+				<li>
+					 <a href="#">Next</a>
+				</li>
+			</ul>
 		</div>
 	</div>
-	
-	<div class="row">
-		<div class="col-lg-6 col-lg-offset-3">
-			<div class="well bs-component">
-			     
-			<table class="table table-striped table-hover ">
-			  <thead>
-			    <tr>
-			      <th>这是一个主页</th>
-			      
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			    	<td>#</td>
-			      	<s:iterator value="projectDoing" id="st"> 
-						<td>${st}</td>
-					</s:iterator> 
-			    </tr>
-			    </tbody>
-			</table> 
-	</div></div></div>
 </div>
-	
-	
+
+
 	<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
     <!-- 可选: 包含 jQuery 库 -->
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>

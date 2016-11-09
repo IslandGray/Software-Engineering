@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>开发者主页</title>
+	<title>正在进行的项目</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -27,13 +27,13 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active">
+						<li>
 							 <a href="returnDevIndex.action?inputAccount=${inputAccount}">个人主页</a>
 						</li>
 						<li>
 							 <a href="devtoMarket.action?inputAccount=${inputAccount}">需求市场</a>
 						</li>
-						<li>
+						<li class="active">
 							 <a href="returnDevDoing.action?inputAccount=${inputAccount}">当前工作</a>
 						</li>
 						<li class="dropdown">
@@ -97,22 +97,34 @@
 	</div>
 	
 	<div class="row">
-		<div class="col-lg-6 col-lg-offset-3">
+		<div class="col-lg-10 col-lg-offset-1">
 			<div class="well bs-component">
 			     
 			<table class="table table-striped table-hover ">
 			  <thead>
 			    <tr>
-			      <th>这是一个主页</th>
-			      
+			      <th>任务ID</th>
+			      <th>项目名</th>
+			      <th>委托方</th>
+			      <th>编程语言</th>
+			      <th>平台</th>
+			      <th>工期</th>
+			      <th>报酬</th>
+			      <th>人数</th>
+			      <th>状态</th>
 			    </tr>
 			  </thead>
 			  <tbody>
 			    <tr>
-			    	<td>#</td>
-			      	<s:iterator value="projectDoing" id="st"> 
-						<td>${st}</td>
-					</s:iterator> 
+			    	<td>${id}</td>
+			      	<td>${name}</td>
+			      	<td>${company}</td>
+			      	<td>${language}</td>
+			      	<td>${platform}</td>
+			      	<td>${time}</td>
+			      	<td>${Price}</td>
+			      	<td>${num}</td>
+			      	<td>${status}</td>
 			    </tr>
 			    </tbody>
 			</table> 

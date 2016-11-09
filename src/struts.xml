@@ -55,5 +55,11 @@
     	<action name="returnDevIndex" class="Dev.DevIndex" method="login">
 	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevIndex.jsp</result>
 	    </action>
+	    <action name="returnDevDoing" class="Dev.DevDoing" method="doing">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevDoing.jsp</result>
+	    </action>
+	    <action name="devtoMarket" class="Dev.DevToMarket" method="doing">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/Market.jsp</result>
+	    </action>
     </package>
 </struts>
