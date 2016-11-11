@@ -92,31 +92,41 @@
 					</ul>
 				</div>
 			</nav>
-			
+			<div class="page-header">
+				<h1>
+					个人主页 <small>Index</small>
+				</h1>
+			</div> 
 		</div>
 	</div>
 	
-	<div class="row">
-		<div class="col-lg-6 col-lg-offset-3">
-			<div class="well bs-component">
-			     
+	<div class="row clearfix">
+		<div class="col-md-3 column">
+			<ul class="nav nav-pills nav-stacked">
+			<li class="active"><a href="#">系统推荐</a></li>
+			<li><a href="#">个人资料</a></li>
+			<li><a href="#">账户管理</a></li>
+			<li><a href="#">验证资料</a></li>
+			<li><a href="#">工作记录</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9 column">
 			<table class="table table-striped table-hover ">
 			  <thead>
 			    <tr>
-			      <th>这是一个主页</th>
-			      
+			      <th>系统推荐项目</th>
+			       
 			    </tr>
 			  </thead>
 			  <tbody>
 			    <tr>
 			    	<td>#</td>
-			      	<s:iterator value="projectDoing" id="st"> 
-						<td>${st}</td>
-					</s:iterator> 
+
 			    </tr>
 			    </tbody>
-			</table> 
-	</div></div></div>
+			</table>
+		</div>
+	</div>
 </div>
 	
 	

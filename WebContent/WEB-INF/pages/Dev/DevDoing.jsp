@@ -92,14 +92,17 @@
 					</ul>
 				</div>
 			</nav>
-			
+			<div class="page-header">
+				<h1>
+					当前工作 <small>Current Project</small>
+				</h1>
+			</div> 
 		</div>
 	</div>
 	
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
-			<div class="well bs-component">
-			     
+			<div class="well bs-component"> 
 			<table class="table table-striped table-hover ">
 			  <thead>
 			    <tr>
@@ -117,8 +120,8 @@
 			  <tbody>
 			    <tr>
 			    	<td>${id}</td>
-			      	<td>${name}</td>
-			      	<td>${company}</td>
+			      	<td><a href="#">${name}</a></td>
+			      	<td><a href="#">${company}</a></td>
 			      	<td>${language}</td>
 			      	<td>${platform}</td>
 			      	<td>${time}</td>

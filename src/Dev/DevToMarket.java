@@ -11,6 +11,7 @@ import SQL.Project;
 
 public class DevToMarket {
 	private List<Project> list=new ArrayList<Project>();
+	private String inputAccount;
 	
 	public String doing() throws Exception{
 		
@@ -58,6 +59,14 @@ public class DevToMarket {
 
 	public void setList(List<Project> list) {
 		this.list = list;
+	}
+
+	public String getInputAccount() {
+		return inputAccount;
+	}
+
+	public void setInputAccount(String inputAccount) {
+		this.inputAccount = inputAccount;
 	}
 	
 	
