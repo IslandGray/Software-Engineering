@@ -132,7 +132,7 @@
 							<td>${pro.price}</td>
 							<td>${pro.num}</td>
 							<td>${pro.status}</td>
-							<td><a href="#">投标</a></td>
+							<td><a href="devTender.action?itemID=${pro.id}&inputAccount=${inputAccount}" >投标</a></td>
 						</tr>
 					</s:iterator> 
 				</tbody>

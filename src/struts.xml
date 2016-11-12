@@ -61,5 +61,9 @@
 	    <action name="devtoMarket" class="Dev.DevToMarket" method="doing">
 	      	<result name="SUCCESS">/WEB-INF/pages/Dev/Market.jsp</result>
 	    </action>
+	    <action name="devTender" class="Dev.DevTender" method="tender">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevIndex.jsp</result>
+	      	<result name="ERROR">/WEB-INF/pages/Dev/Market.jsp</result>
+	    </action>
     </package>
 </struts>
