@@ -15,6 +15,4 @@ public class DevIndex {
 		this.inputAccount = inputAccount;
 	}
 	
-	
-	
 }

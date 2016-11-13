@@ -126,5 +126,4 @@ public class Project {
 		this.status = status;
 	}
 	
-	
 }

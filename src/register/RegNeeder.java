@@ -25,7 +25,7 @@ public class RegNeeder {
 		    }
 		try {
 		      Connection connect = DriverManager.getConnection(
-		          "jdbc:mysql://localhost:3306/JOB","root","wcp19970221");
+		          "jdbc:mysql://localhost:3306/JOB","root","19960822zzc");
 		      System.out.println("Success connect Mysql server!");
 		      Statement stmt = connect.createStatement();
 		      ResultSet rs = stmt.executeQuery("select * from Needer where Company='"+inputCompany+"' or Email='"+inputEmail+"'");
@@ -40,6 +40,7 @@ public class RegNeeder {
 		catch (Exception e) {
 		      System.out.print("get data error!");
 		      e.printStackTrace();
+		      return "ERROR";
 		    }
 		return "SUCCESS";
 	}

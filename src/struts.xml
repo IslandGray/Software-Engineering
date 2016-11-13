@@ -26,10 +26,12 @@
 	     <action name="RegDevSubmit" class="register.RegDeveloper" method="register">
 	      	<result name="SUCCESS">index.jsp</result>
 	      	<result name="REGISTED">/WEB-INF/pages/Register/Developer.jsp</result>
+	      	<result name="ERROR">/WEB-INF/pages/Register/Developer.jsp</result>
 	     </action>
 	     <action name="RegNeedSubmit" class="register.RegNeeder" method="register">
 	      	<result name="SUCCESS">index.jsp</result>
 	      	<result name="REGISTED">/WEB-INF/pages/Register/Needer.jsp</result>
+	      	<result name="ERROR">/WEB-INF/pages/Register/Needer.jsp</result>
 	     </action>
     </package>
     <package name="LOGIN" extends="struts-default">
@@ -47,7 +49,7 @@
 	      	<result name="FAILED">/WEB-INF/pages/Login/DevLogin.jsp</result>
 	    </action>
 	    <action name="LoginNeedSubmit" class="login.LoginNeed" method="login">
-	      	<result name="SUCCESS">index.jsp</result>
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederIndex.jsp</result>
 	      	<result name="FAILED">/WEB-INF/pages/Login/NeedLogin.jsp</result>
 	    </action>
     </package>
@@ -64,6 +66,11 @@
 	    <action name="devTender" class="Dev.DevTender" method="tender">
 	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevIndex.jsp</result>
 	      	<result name="ERROR">/WEB-INF/pages/Dev/Market.jsp</result>
+	    </action>
+    </package>
+    <package name="NEEDER" extends="struts-default">
+        <action name="gotoNeederHomepage" class="Needer.NeederIndex" method="IndexTrans">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederHomepage.jsp</result>
 	    </action>
     </package>
 </struts>

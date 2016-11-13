@@ -29,7 +29,7 @@ public class RegDeveloper {
 		    }
 		try {
 		      Connection connect = DriverManager.getConnection(
-		          "jdbc:mysql://localhost:3306/JOB","root","wcp19970221");
+		          "jdbc:mysql://localhost:3306/JOB","root","19960822zzc");
 		      System.out.println("Success connect Mysql server!");
 		      Statement stmt = connect.createStatement();
 		      ResultSet rs = stmt.executeQuery("select * from Developer where Account='"+inputAccount+"' or ID='"+inputID+"'");
@@ -39,13 +39,14 @@ public class RegDeveloper {
 		      }
 		      //if (inputSex.equals("男")) sex=0;
 		      //else if (inputSex.equals("女")) sex=1;
-		      int num=stmt.executeUpdate("insert into Developer values('"+inputName+"','"+inputID+"','"+inputGraduate+"','"+inputSex+"','"+inputAccount+"','"+inputPassword+"')");
+		      int num=stmt.executeUpdate("insert into Developer values('"+inputName+"','"+inputID+"','"+inputGraduate+"','"+inputSex+"','"+inputAccount+"','"+inputPassword+"',NULL,NULL)");
 		      if(num>=1)	System.out.print("success add "+num+" records in Table-Developer");
 		      else	System.out.print("Add data error!");
 		} 
 		catch (Exception e) {
 		      System.out.print("get data error!");
 		      e.printStackTrace();
+		      return "ERROR";
 		    }
 		return "SUCCESS";
 	}
