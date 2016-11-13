@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.catalina.valves.rewrite.Substitution.RewriteRuleBackReferenceElement;
+
 public class DevTender {
 	private String itemID;
 	private String inputAccount;
@@ -25,23 +27,49 @@ public class DevTender {
 		          "jdbc:mysql://localhost:3306/JOB","root","wcp19970221");
 		      System.out.println("Success connect Mysql server!");
 		      Statement stmt = connect.createStatement();
-		      ResultSet rs = stmt.executeQuery("select * from Project where ID='"+itemID+"'");
+		      
+		      ResultSet rs = stmt.executeQuery("select * from Developer where Account='"+inputAccount+"'");
 		      if(rs.next()){
-		    	  String exist = rs.getString("Waiter");
+		    	  String exist = rs.getString("Tender");
 		    	  if(exist!=null){
-		    		  int num=stmt.executeUpdate("update Project set Waiter='"+exist+"&"+inputAccount+"' where ID='"+itemID+"'");
-				      if(num>=1)	System.out.print("success add "+num+" waiter in Table-project");
-				      else	System.out.print("Add data error!");
+		    		  System.out.print("Exist tender!");
+		    		  return "EXIST";
 		    	  }
 		    	  else{
-		    		  int num=stmt.executeUpdate("update Project set Waiter='"+inputAccount+"' where ID='"+itemID+"'");
-				      if(num>=1)	System.out.print("success add "+num+" waiter in Table-project");
-				      else	System.out.print("Add data error!");
+		    		  exist=rs.getString("Doing");
+		    		  if(exist!=null){
+		    			  System.out.print("Exist working!");
+			    		  return "EXIST";
+		    		  }
+		    		  else{
+		    			  int num=stmt.executeUpdate("update Developer set Tender='"+itemID+"' where Account='"+inputAccount+"'");
+					      if(num>=1)	System.out.print("success add "+num+" tender in Table-developer");
+					      else	System.out.print("Add data error!");
+					      
+					      rs = stmt.executeQuery("select * from Project where ID='"+itemID+"'");
+					      if(rs.next()){
+					    	  exist = rs.getString("Waiter");
+					    	  if(exist!=null){
+					    		  num=stmt.executeUpdate("update Project set Waiter='"+exist+"&"+inputAccount+"' where ID='"+itemID+"'");
+							      if(num>=1)	System.out.print("success add "+num+" waiter in Table-project");
+							      else	System.out.print("Add data error!");
+					    	  }
+					    	  else{
+					    		  num=stmt.executeUpdate("update Project set Waiter='"+inputAccount+"' where ID='"+itemID+"'");
+							      if(num>=1)	System.out.print("success add "+num+" waiter in Table-project");
+							      else	System.out.print("Add data error!");
+					    	  }
+						 } 
+					      else{
+					    	  return "ERROR";
+					      }
+		    		  }
 		    	  }
 			 } 
 		      else{
 		    	  return "ERROR";
 		      }
+		      
 		      return "SUCCESS";
 		} 
 		catch (Exception e) {

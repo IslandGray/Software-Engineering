@@ -35,6 +35,10 @@ public class DevDoing {
 		      ResultSet rs = stmt.executeQuery("select * from Developer where Account='"+inputAccount+"'");
 		      if(rs.next()){
 		    	  id=rs.getString("Doing");
+		    	  if(id==null){
+		    		  id="#";
+		    		  return "SUCCESS";
+		    	  }
 		    	  rs = stmt.executeQuery("select * from Project where ID='"+id+"'");
 		    	  if(rs.next()){
 			    	  name = rs.getString("Name");

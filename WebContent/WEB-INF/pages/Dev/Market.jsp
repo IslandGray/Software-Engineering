@@ -25,7 +25,7 @@
 					 <span class="icon-bar"></span>
 					 <span class="icon-bar"></span>
 					 <span class="icon-bar"></span>
-					 </button> <a class="navbar-brand" href="index.jsp">Brand</a>
+					 </button> <a class="navbar-brand" href="#">Brand</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
@@ -87,7 +87,7 @@
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="#">Separated link</a>
+									 <a href="index.jsp">注销</a>
 								</li>
 							</ul>
 						</li>

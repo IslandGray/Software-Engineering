@@ -103,8 +103,8 @@
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
-			<li class="active"><a href="#">系统推荐</a></li>
-			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
+			<li><a href="#">系统推荐</a></li>
+			<li class="active"><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
 			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a></li>
 			<li><a href="#">账户管理</a></li>
 			<li><a href="#">验证资料</a></li>
@@ -112,20 +112,20 @@
 			</ul>
 		</div>
 		<div class="col-md-9 column">
-			<table class="table table-striped table-hover ">
-			  <thead>
-			    <tr>
-			      <th>系统推荐项目</th>
-			       
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			    	<td>#</td>
-
-			    </tr>
-			    </tbody>
+			<table class="table table-hover">
+				<thead><tr><th>账户</th></tr></thead>
+				<tbody><tr><td>${inputAccount}</td></tr></tbody>
+				<thead><tr><th>姓名</th></tr></thead>
+				<tbody><tr><td>${inputName}</td></tr></tbody>
+				<thead><tr><th>身份证号</th></tr></thead>
+				<tbody><tr><td>${inputID}</td></tr></tbody>
+				<thead><tr><th>学历</th></tr></thead>
+				<tbody><tr><td>${inputGraduate}</td>
+				<thead><tr><th>性别</th></tr></thead>
+				<tbody><tr><td>${inputSex}</td></tr></tbody>
 			</table>
+			<a href="devEdit.action?inputAccount=${inputAccount}&inputName=${inputName}&inputID=${inputID}&inputGraduate=${inputGraduate}&inputSex=${inputSex}" class="btn btn-info btn-lg btn-block">修改信息</a>
+			
 		</div>
 	</div>
 </div>

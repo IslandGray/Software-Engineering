@@ -22,6 +22,7 @@ public class RegNeeder {
 		    catch (Exception e) {
 		      System.out.print("Error loading Mysql Driver!");
 		      e.printStackTrace();
+		      return "ERROR";
 		    }
 		try {
 		      Connection connect = DriverManager.getConnection(
@@ -40,6 +41,7 @@ public class RegNeeder {
 		catch (Exception e) {
 		      System.out.print("get data error!");
 		      e.printStackTrace();
+		      return "ERROR";
 		    }
 		return "SUCCESS";
 	}

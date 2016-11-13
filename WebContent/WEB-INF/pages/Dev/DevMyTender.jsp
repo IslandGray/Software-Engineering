@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -103,9 +104,9 @@
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
-			<li class="active"><a href="#">系统推荐</a></li>
+			<li><a href="#">系统推荐</a></li>
 			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
-			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a></li>
+			<li class="active"><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a></li>
 			<li><a href="#">账户管理</a></li>
 			<li><a href="#">验证资料</a></li>
 			<li><a href="#">工作记录</a></li>
@@ -115,16 +116,37 @@
 			<table class="table table-striped table-hover ">
 			  <thead>
 			    <tr>
-			      <th>系统推荐项目</th>
+			          <th>任务ID</th>
+				      <th>项目名</th>
+				      <th>委托方</th>
+				      <th>编程语言</th>
+				      <th>平台</th>
+				      <th>学历要求</th>
+				      <th>经验要求</th>
+				      <th>工期</th>
+				      <th>报酬</th>
+				      <th>人数</th>
+				      <th>状态</th>
 			       
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
-			    	<td>#</td>
-
-			    </tr>
-			    </tbody>
+			    <s:iterator value="list" id="pro"> 
+			    	<tr>
+				    	<td>${pro.id}</td>
+						<td><a href="#">${pro.name}</a></td>
+						<td><a href="#">${pro.needer}</a></td>
+						<td>${pro.language}</td>
+						<td>${pro.platform}</td>
+						<td>${pro.education}</td>
+						<td>${pro.experience}</td>
+						<td>${pro.time}</td>
+						<td>${pro.price}</td>
+						<td>${pro.num}</td>
+						<td>${pro.status}</td>
+					</tr>
+				</s:iterator>
+			  </tbody>
 			</table>
 		</div>
 	</div>

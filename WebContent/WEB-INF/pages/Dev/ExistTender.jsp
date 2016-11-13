@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>开发者主页</title>
+	<title>需求市场</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -13,6 +14,7 @@
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
 </head>
 <body>
+
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -27,10 +29,10 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active">
+						<li>
 							 <a href="returnDevIndex.action?inputAccount=${inputAccount}">个人主页</a>
 						</li>
-						<li>
+						<li class="active">
 							 <a href="devtoMarket.action?inputAccount=${inputAccount}">需求市场</a>
 						</li>
 						<li>
@@ -92,45 +94,33 @@
 					</ul>
 				</div>
 			</nav>
-			<div class="page-header">
-				<h1>
-					个人主页 <small>Index</small>
-				</h1>
-			</div> 
+		<div class="page-header">
+			<h1>
+				需求市场 <small>Market</small>
+			</h1>
 		</div>
-	</div>
-	
-	<div class="row clearfix">
-		<div class="col-md-3 column">
-			<ul class="nav nav-pills nav-stacked">
-			<li class="active"><a href="#">系统推荐</a></li>
-			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
-			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a></li>
-			<li><a href="#">账户管理</a></li>
-			<li><a href="#">验证资料</a></li>
-			<li><a href="#">工作记录</a></li>
-			</ul>
-		</div>
-		<div class="col-md-9 column">
-			<table class="table table-striped table-hover ">
-			  <thead>
-			    <tr>
-			      <th>系统推荐项目</th>
-			       
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			    	<td>#</td>
-
-			    </tr>
-			    </tbody>
-			</table>
+		
+		<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="jumbotron well">
+						<h1>
+							无法投标
+						</h1>
+						<p>
+							你当前已经存在一个进行中的工作或投标，点击返回
+						</p>
+						<p>
+							 <a class="btn btn-primary btn-large" href="devtoMarket.action?inputAccount=${inputAccount}">返回</a>
+						</p>
+					</div>
+				</div>
+			</div>
+				
 		</div>
 	</div>
 </div>
-	
-	
+
+
 	<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
     <!-- 可选: 包含 jQuery 库 -->
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>

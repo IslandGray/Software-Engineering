@@ -26,10 +26,12 @@
 	     <action name="RegDevSubmit" class="register.RegDeveloper" method="register">
 	      	<result name="SUCCESS">index.jsp</result>
 	      	<result name="REGISTED">/WEB-INF/pages/Register/Developer.jsp</result>
+	      	<result name="ERROR">/WEB-INF/pages/Register/Developer.jsp</result>
 	     </action>
 	     <action name="RegNeedSubmit" class="register.RegNeeder" method="register">
 	      	<result name="SUCCESS">index.jsp</result>
 	      	<result name="REGISTED">/WEB-INF/pages/Register/Needer.jsp</result>
+	      	<result name="ERROR">/WEB-INF/pages/Register/Needer.jsp</result>
 	     </action>
     </package>
     <package name="LOGIN" extends="struts-default">
@@ -64,6 +66,20 @@
 	    <action name="devTender" class="Dev.DevTender" method="tender">
 	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevIndex.jsp</result>
 	      	<result name="ERROR">/WEB-INF/pages/Dev/Market.jsp</result>
+	      	<result name="EXIST">/WEB-INF/pages/Dev/ExistTender.jsp</result>
+	    </action>
+	    <action name="devMyTender" class="Dev.DevMyTender" method="tender">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevMyTender.jsp</result>
+	      	<result name="ERROR">/WEB-INF/pages/Dev/DevIndex.jsp</result>
+	    </action>
+	    <action name="devEditPre" class="Dev.DevEditPre" method="edit">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevDataPre.jsp</result>
+	    </action>
+	    <action name="devEdit" class="Dev.DevIndex" method="login">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevData.jsp</result>
+	    </action>
+	    <action name="devEditSave" class="Dev.DevEditSave" method="edit">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevDataPre.jsp</result>
 	    </action>
     </package>
 </struts>

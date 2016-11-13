@@ -103,8 +103,8 @@
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
-			<li class="active"><a href="#">系统推荐</a></li>
-			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
+			<li><a href="#">系统推荐</a></li>
+			<li class="active"><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
 			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a></li>
 			<li><a href="#">账户管理</a></li>
 			<li><a href="#">验证资料</a></li>
@@ -112,20 +112,63 @@
 			</ul>
 		</div>
 		<div class="col-md-9 column">
-			<table class="table table-striped table-hover ">
-			  <thead>
-			    <tr>
-			      <th>系统推荐项目</th>
-			       
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			    	<td>#</td>
-
-			    </tr>
-			    </tbody>
-			</table>
+			<form class="form-horizontal" action="devEditSave.action?inputAccount=${inputAccount}&inputName=${inputName}&inputID=${inputID}" method="post" enctype="multipart/form-data">
+					  <fieldset>
+					    <legend>注册信息</legend>
+					    <div class="form-group">
+					      <label for="inputName" class="col-lg-2 control-label">真实姓名</label>
+					      <div class="col-lg-10">
+					        <input type="text" class="form-control" name="inputName" placeholder="${inputName}" disabled="">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <label for="inputID" class="col-lg-2 control-label">身份证号</label>
+					      <div class="col-lg-10">
+					        <input type="text" class="form-control" name="inputID" placeholder="${inputID}" disabled="">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <label for="inputGraduate" class="col-lg-2 control-label">学历</label>
+					      <div class="col-lg-10">
+					        <select class="form-control" name="inputGraduate">
+					          <option>请选择...</option>
+					          <option>小学</option>
+					          <option>初中</option>
+					          <option>高中</option>
+					          <option>大学专科</option>
+					          <option>大学本科</option>
+					          <option>硕士</option>
+					          <option>博士</option>
+					        </select>
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <label for="inputS" class="col-lg-2 control-label">性别</label>
+					      <div class="col-lg-10">
+					        <div class="radio">
+					          <label>
+					            <input type="radio" name="inputSex" id="inputSex" value="男" checked="">
+					            男
+					          </label>
+					        </div>
+					        <div class="radio">
+					          <label>
+					            <input type="radio" name="inputSex" id="inputSex" value="女">
+					            女
+					          </label>
+					        </div>
+					      </div>
+					    </div>
+					    
+					    <div class="form-group">
+					      <div class="col-lg-10 col-lg-offset-2">
+					        <button type="reset" class="btn btn-default">Reset</button>
+					        <button type="submit" class="btn btn-primary">Submit</button>
+					      </div>
+					    </div>
+					    
+					  </fieldset>
+					</form>
 		</div>
 	</div>
 </div>
