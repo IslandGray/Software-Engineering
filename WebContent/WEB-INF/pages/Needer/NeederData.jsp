@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>需求商登录</title>
+	<title>需求商企业主页</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -18,15 +18,26 @@
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.jsp">Brand</a>
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+					 <span class="sr-only">Toggle navigation</span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+					 </button> <a class="navbar-brand" href="#">Brand</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active">
-							 <a href="#">Link</a>
+							 <a href="neederEditPre.action?inputEmail=${inputEmail}">企业主页</a>
 						</li>
 						<li>
-							 <a href="#">Link</a>
+							 <a href="#">发布项目</a>
+						</li>
+						<li>
+							 <a href="#">正在招标</a>
+						</li>
+						<li>
+							 <a href="#">正在进行</a>
 						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
@@ -63,10 +74,10 @@
 							 <a href="#">Link</a>
 						</li>
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputEmail}<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
-									 <a href="#">Action</a>
+									 <a href="#">个人主页</a>
 								</li>
 								<li>
 									 <a href="#">Another action</a>
@@ -77,79 +88,84 @@
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="#">Separated link</a>
+									 <a href="index.jsp">注销</a>
 								</li>
 							</ul>
 						</li>
 					</ul>
 				</div>
 			</nav>
-			<div class="row clearfix">
-				<div class="col-md-8 column">
-					<form class="form-horizontal" action="LoginNeedSubmit.action" method="post" enctype="multipart/form-data">
+			<div class="page-header">
+				<h1>
+					企业主页 <small>Index</small>
+				</h1>
+			</div> 
+		</div>
+	</div>
+	
+	<div class="row clearfix">
+		<div class="col-md-3 column">
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a></li>
+				<li><a href="#">账号信息</a></li>
+				<li><a href="#">历史项目</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9 column">
+			<form class="form-horizontal" action="neederEditSave.action?inputEmail=${inputEmail}&inputCompany=${inputCompany}" method="post" enctype="multipart/form-data">
 					  <fieldset>
-					    <legend>需求商登陆</legend>
+					    <legend>注册信息</legend>
 					    <div class="form-group">
-					      <label for="inputAccount" class="col-lg-2 control-label">邮箱账号</label>
+					      <label for="inputEmail" class="col-lg-2 control-label">注册账号</label>
 					      <div class="col-lg-10">
-					        <input type="email" class="form-control" name="inputEmail" placeholder="邮箱">
+					        <input type="text" class="form-control" name="inputEmail" value="${inputEmail}" disabled="">
 					      </div>
 					    </div>
 					    <div class="form-group">
-					      <label for="inputPassword" class="col-lg-2 control-label">密码</label>
+					      <label for="inputCompany" class="col-lg-2 control-label">企业名</label>
 					      <div class="col-lg-10">
-					        <input type="password" class="form-control" name="inputPassword" placeholder="Password">
+					        <input type="text" class="form-control" name="inputCompany" value="${inputCompany}" disabled="">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <label for="inputAccount" class="col-lg-2 control-label">用户名</label>
+					      <div class="col-lg-10">
+					        <input type="text" class="form-control" name="inputAccount" value="${inputAccount}">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <label for="inputLocation" class="col-lg-2 control-label">所在地</label>
+					      <div class="col-lg-10">
+					        <input type="text" class="form-control" name="inputLocation" value="${inputLocation}">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <label for="inputAttention" class="col-lg-2 control-label">联系人</label>
+					      <div class="col-lg-10">
+					        <input type="text" class="form-control" name="inputAttention" value="${inputAttention}">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <label for="inputNumber" class="col-lg-2 control-label">联系电话</label>
+					      <div class="col-lg-10">
+					        <input type="text" class="form-control" name="inputNumber" value="${inputNumber}">
 					      </div>
 					    </div>
 					    
 					    <div class="form-group">
 					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-default">Reset</button>
-					        <button type="submit" class="btn btn-primary">Submit</button>
+					        <button type="reset" class="btn btn-danger">清空</button>
+					        <button type="submit" class="btn btn-primary">提交</button>
 					      </div>
 					    </div>
 					    
 					  </fieldset>
 					</form>
-				</div>
-				<div class="col-md-4 column">
-					<dl>
-						<dt>
-							Description lists
-						</dt>
-						<dd>
-							A description list is perfect for defining terms.
-						</dd>
-						<dt>
-							Euismod
-						</dt>
-						<dd>
-							Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-						</dd>
-						<dd>
-							Donec id elit non mi porta gravida at eget metus.
-						</dd>
-						<dt>
-							Malesuada porta
-						</dt>
-						<dd>
-							Etiam porta sem malesuada magna mollis euismod.
-						</dd>
-						<dt>
-							Felis euismod semper eget lacinia
-						</dt>
-						<dd>
-							Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-						</dd>
-					</dl>
-				</div>
-			</div>
-			
 		</div>
 	</div>
 </div>
-
-
+	
+	
 	<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
     <!-- 可选: 包含 jQuery 库 -->
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>

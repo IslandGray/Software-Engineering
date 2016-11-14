@@ -49,7 +49,7 @@
 	      	<result name="FAILED">/WEB-INF/pages/Login/DevLogin.jsp</result>
 	    </action>
 	    <action name="LoginNeedSubmit" class="login.LoginNeed" method="login">
-	      	<result name="SUCCESS">index.jsp</result>
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederIndex.jsp</result>
 	      	<result name="FAILED">/WEB-INF/pages/Login/NeedLogin.jsp</result>
 	    </action>
     </package>
@@ -80,6 +80,20 @@
 	    </action>
 	    <action name="devEditSave" class="Dev.DevEditSave" method="edit">
 	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevDataPre.jsp</result>
+	    </action>
+    </package>
+    <package name="NEEDER" extends="struts-default">
+        <action name="gotoNeederHomepage" class="Needer.NeederIndex" method="IndexTrans">
+	      	<result name="SUCCESS">neederEditPre.action</result>
+	    </action>
+	    <action name="neederEditPre" class="Needer.NeederEditPre" method="edit">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederHomepage.jsp</result>
+	    </action>
+	    <action name="neederEdit" class="Needer.NeederIndex" method="IndexTrans">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederData.jsp</result>
+	    </action>
+	    <action name="neederEditSave" class="Needer.NeederEditSave" method="edit">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederHomepage.jsp</result>
 	    </action>
     </package>
 </struts>
