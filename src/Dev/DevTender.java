@@ -32,8 +32,9 @@ public class DevTender {
 		      if(rs.next()){
 		    	  String exist = rs.getString("Tender");
 		    	  if(exist!=null){
-		    		  System.out.print("Exist tender!");
-		    		  return "EXIST";
+		    		  int num=stmt.executeUpdate("update Developer set Tender='"+exist+"&"+itemID+"' where Account='"+inputAccount+"'");
+				      if(num>=1)	System.out.print("success add "+num+" tender in Table-developer");
+				      else	System.out.print("Add data error!");
 		    	  }
 		    	  else{
 		    		  exist=rs.getString("Doing");
@@ -42,6 +43,7 @@ public class DevTender {
 			    		  return "EXIST";
 		    		  }
 		    		  else{
+		    			  
 		    			  int num=stmt.executeUpdate("update Developer set Tender='"+itemID+"' where Account='"+inputAccount+"'");
 					      if(num>=1)	System.out.print("success add "+num+" tender in Table-developer");
 					      else	System.out.print("Add data error!");

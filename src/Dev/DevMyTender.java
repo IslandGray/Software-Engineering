@@ -29,29 +29,37 @@ public class DevMyTender {
 		      System.out.println("Success connect Mysql server!");
 		      Statement stmt = connect.createStatement();
 		      ResultSet rs = stmt.executeQuery("select * from Developer where Account='"+inputAccount+"'");
-		      while(rs.next()){
-		    	  String projectID=rs.getString("Tender");
-		    	  rs = stmt.executeQuery("select * from Project where ID='"+projectID+"'");
-			      if(rs.next()){
-			    	  String id=rs.getString("ID");
-			    	  String name = rs.getString("Name");
-			    	  String company = rs.getString("Needer");
-			    	  int num = rs.getInt("Num");
-			    	  String language = rs.getString("Language");
-			    	  String platform = rs.getString("Platform");
-			    	  String  time = rs.getString("Time");
-			    	  String price = rs.getString("Price");
-			    	  String status = rs.getString("Status");
-			    	  String experience = rs.getString("Experience");
-			    	  String education = rs.getString("Education");
-			    	  
-			    	  Project pro=new Project(name, "", num, education, language, platform, experience, time, price, id, company, status);
-			    	  list.add(pro);
-			      }
-			      else{
-			    	  System.out.println("no such project!");
-			    	  return "SUCCESS";
-			      }
+		      if(rs.next()){
+		    	  String projectIDtemp=rs.getString("Tender");
+		    	  if(projectIDtemp==null){
+		    		  System.out.println("No Tender!");
+		    		  return "SUCCESS";
+		    	  }
+		    	  try{
+		    		  String[] projectID=projectIDtemp.split("&");
+		    		  for(int i=0;i<projectID.length;i++){
+			    		  rs = stmt.executeQuery("select * from Project where ID='"+projectID[i]+"'");
+					      if(rs.next()){
+					    	  String id=rs.getString("ID");
+					    	  String name = rs.getString("Name");
+					    	  String company = rs.getString("Needer");
+					    	  int num = rs.getInt("Num");
+					    	  String language = rs.getString("Language");
+					    	  String platform = rs.getString("Platform");
+					    	  String  time = rs.getString("Time");
+					    	  String price = rs.getString("Price");
+					    	  String status = rs.getString("Status");
+					    	  String experience = rs.getString("Experience");
+					    	  String education = rs.getString("Education");
+					    	  
+					    	  Project pro=new Project(name, "", num, education, language, platform, experience, time, price, id, company, status);
+					    	  list.add(pro);
+					      }
+			    	  }
+		    	  }catch(Exception e){
+		    		  System.out.println("Only one tender");
+		    		  return "SUCCESS";
+		    	  }
 		      }
 		} 
 		catch (Exception e) {
