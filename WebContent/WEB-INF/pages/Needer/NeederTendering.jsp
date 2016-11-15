@@ -126,6 +126,7 @@
 			    <s:iterator value="list" id="pro"> 
 			    	<tr>
 				    	<td>${pro.id}</td>
+
 						<td>${pro.name}</a></td>
 						<td>${pro.language}</td>
 						<td>${pro.platform}</td>
@@ -135,7 +136,9 @@
 						<td>${pro.price}</td>
 						<td>${pro.num}</td>
 						<td>${tenderNum}</td>
+
 						<td><a href="neederSelect.action?inputEmail=${inputEmail}&projectID=${pro.id}&name=${pro.name}&platform=${pro.platform}&education=${pro.education}&price=${pro.price}&experience=${pro.experience}&time=${pro.time}&num=${pro.num}&tendernum=${tenderNum}&language=${pro.language}">开始筛选</a></td>
+
 					</tr>
 				</s:iterator>
 			   </tbody>

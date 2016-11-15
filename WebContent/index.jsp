@@ -64,10 +64,11 @@
 				</nav>
 				<div class="jumbotron">
 					<h1>
-						Hello, world!
+						<font face="微软雅黑">众包市场</font>
 					</h1>
 					<p>
-						This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+						这里是软件众包的合作平台，在这里你可以发布你的需求，也可以与其他开发者组成团队</br>
+						
 					</p>
 					<p>
 						 <a class="btn btn-primary btn-large" href="#">Learn more</a>
@@ -78,10 +79,10 @@
 		<div class="row clearfix">
 			<div class="col-md-4 column">
 				<h2>
-					Heading
+					<font face="微软雅黑">作为开发者</font>
 				</h2>
 				<p>
-					Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+					你是一位有开发能力的个体</br></br>你可以上传你的简历，寻找合适的项目并且投标</br>在这里你将与其他人组成一个临时的开发团队
 				</p>
 				<p>
 					 <a class="btn" href="#">View details »</a>
@@ -89,10 +90,10 @@
 			</div>
 			<div class="col-md-4 column">
 				<h2>
-					Heading
+					<font face="微软雅黑">作为需求商</font>
 				</h2>
 				<p>
-					Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+					你可以随时发出软件需求，等待开发者前来投标，也可以根据我们的推荐联系已注册的开发者。
 				</p>
 				<p>
 					 <a class="btn" href="#">View details »</a>
@@ -100,10 +101,12 @@
 			</div>
 			<div class="col-md-4 column">
 				<h2>
-					Heading
+					<font face="微软雅黑">友情链接</font>
 				</h2>
 				<p>
-					Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+					<a href="https://github.com">
+						<img border="0" height="135" width="200" src="http://img2.niushe.com/upload/201304/19/14-22-31-71-26144.jpg" />
+					</a>
 				</p>
 				<p>
 					 <a class="btn" href="#">View details »</a>
