@@ -30,42 +30,49 @@ public class DevTender {
 		      
 		      ResultSet rs = stmt.executeQuery("select * from Developer where Account='"+inputAccount+"'");
 		      if(rs.next()){
-		    	  String exist = rs.getString("Tender");
+		    	  String exist = rs.getString("Doing");
 		    	  if(exist!=null){
-		    		  int num=stmt.executeUpdate("update Developer set Tender='"+exist+"&"+itemID+"' where Account='"+inputAccount+"'");
-				      if(num>=1)	System.out.print("success add "+num+" tender in Table-developer");
-				      else	System.out.print("Add data error!");
+		    		  
+		    		  System.out.print("Exist working!");
+		    		  return "EXIST";
 		    	  }
 		    	  else{
-		    		  exist=rs.getString("Doing");
+		    		  exist=rs.getString("Tender");
 		    		  if(exist!=null){
-		    			  System.out.print("Exist working!");
-			    		  return "EXIST";
+			    		  String[] tenderID=exist.split("&");
+			    		  for(int i=0;i<tenderID.length;i++){
+			    			  if(itemID.equals(tenderID[i])){
+			    				  return "EXIST";
+			    			  }
+			    		  }
+			    		  int num=stmt.executeUpdate("update Developer set Tender='"+exist+"&"+itemID+"' where Account='"+inputAccount+"'");
+					      if(num>=1)	System.out.print("success add "+num+" tender in Table-developer");
+					      else	System.out.print("Add data error!");
 		    		  }
 		    		  else{
 		    			  
 		    			  int num=stmt.executeUpdate("update Developer set Tender='"+itemID+"' where Account='"+inputAccount+"'");
 					      if(num>=1)	System.out.print("success add "+num+" tender in Table-developer");
-					      else	System.out.print("Add data error!");
-					      
-					      rs = stmt.executeQuery("select * from Project where ID='"+itemID+"'");
-					      if(rs.next()){
-					    	  exist = rs.getString("Waiter");
-					    	  if(exist!=null){
-					    		  num=stmt.executeUpdate("update Project set Waiter='"+exist+"&"+inputAccount+"' where ID='"+itemID+"'");
-							      if(num>=1)	System.out.print("success add "+num+" waiter in Table-project");
-							      else	System.out.print("Add data error!");
-					    	  }
-					    	  else{
-					    		  num=stmt.executeUpdate("update Project set Waiter='"+inputAccount+"' where ID='"+itemID+"'");
-							      if(num>=1)	System.out.print("success add "+num+" waiter in Table-project");
-							      else	System.out.print("Add data error!");
-					    	  }
-						 } 
-					      else{
-					    	  return "ERROR";
-					      }
+					      else	System.out.print("Add data error!");   
 		    		  }
+		    		  
+		    		  rs = stmt.executeQuery("select * from Project where ID='"+itemID+"'");
+				      if(rs.next()){
+				    	  exist = rs.getString("Waiter");
+				    	  if(exist!=null){
+				    		  int num=stmt.executeUpdate("update Project set Waiter='"+exist+"&"+inputAccount+"' where ID='"+itemID+"'");
+						      if(num>=1)	System.out.print("success add "+num+" waiter in Table-project");
+						      else	System.out.print("Add data error!");
+				    	  }
+				    	  else{
+				    		  int num=stmt.executeUpdate("update Project set Waiter='"+inputAccount+"' where ID='"+itemID+"'");
+						      if(num>=1)	System.out.print("success add "+num+" waiter in Table-project");
+						      else	System.out.print("Add data error!");
+				    	  }
+					 } 
+				      else{
+				    	  return "ERROR";
+				      }
 		    	  }
 			 } 
 		      else{

@@ -34,7 +34,7 @@ public class RegNeeder {
 		    	  System.out.print("Already Registed!");
 		    	  return "REGISTED";
 		      }
-		      int num=stmt.executeUpdate("insert into Needer values('"+inputCompany+"','"+inputLocation+"','"+inputAttention+"','"+inputNumber+"','"+inputAccount+"','"+inputEmail+"','"+inputPassword+"')");
+		      int num=stmt.executeUpdate("insert into Needer values('"+inputCompany+"','"+inputLocation+"','"+inputAttention+"','"+inputNumber+"','"+inputAccount+"','"+inputEmail+"','"+inputPassword+"',NULL)");
 		      if(num>=1)	System.out.print("success add "+num+" records in Table-Needer");
 		      else	System.out.print("Add data error!");
 		} 

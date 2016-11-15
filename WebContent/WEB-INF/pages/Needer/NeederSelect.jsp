@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>需求商企业主页</title>
+	<title>招标选择</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -27,13 +28,13 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active">
+						<li>
 							 <a href="neederEditPre.action?inputEmail=${inputEmail}">企业主页</a>
 						</li>
 						<li>
 							 <a href="#">发布项目</a>
 						</li>
-						<li>
+						<li class="active">
 							 <a href="neederTendering.action?inputEmail=${inputEmail}">正在招标</a>
 						</li>
 						<li>
@@ -97,42 +98,77 @@
 			</nav>
 			<div class="page-header">
 				<h1>
-					企业主页 <small>Index</small>
+					招标选择 <small>Selecting</small>
 				</h1>
 			</div> 
 		</div>
 	</div>
 	
-	<div class="row clearfix">
-		<div class="col-md-3 column">
-			<ul class="nav nav-pills nav-stacked">
-				<li class="active"><a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a></li>
-				<li><a href="#">账号信息</a></li>
-				<li><a href="#">历史项目</a></li>
-			</ul>
-		</div>
-		<div class="col-md-4 column">
-			<table class="table table-hover">
-				<thead><tr><th>账号</th></tr></thead>
-				<tbody><tr><td>${inputEmail}</td></tr></tbody>
-				<thead><tr><th>企业名</th></tr></thead>
-				<tbody><tr><td>${inputCompany}</td></tr></tbody>
-				<thead><tr><th>用户名</th></tr></thead>
-				<tbody><tr><td>${inputAccount}</td></tr></tbody>				
-			</table>
-			</div>
-		<div class="col-md-4 column">
-			<table class="table table-hover">
-				<thead><tr><th>所在地</th></tr></thead>
-				<tbody><tr><td>${inputLocation}</td></tr></tbody>
-				<thead><tr><th>联系人</th></tr></thead>
-				<tbody><tr><td>${inputAttention}</td>
-				<thead><tr><th>联系电话</th></tr></thead>
-				<tbody><tr><td>${inputNumber}</td></tr></tbody>
-			</table>
-			<a href="neederEdit.action?inputEmail=${inputEmail}&inputCompany=${inputCompany}&inputAccount=${inputAccount}&inputLocation=${inputLocation}&inputAttention=${inputAttention}&inputNumber=${inputNumber}" class="btn btn-info btn-lg btn-block">修改信息</a>
-		</div>
-	</div>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div class="well bs-component"> 
+			<table class="table table-striped table-hover ">
+			  <thead>
+			    <tr>
+			          <th>任务ID</th>
+				      <th>项目名</th>
+				      <th>编程语言</th>
+				      <th>平台</th>
+				      <th>学历要求</th>
+				      <th>经验要求</th>
+				      <th>工期</th>
+				      <th>报酬</th>
+				      <th>需要人数</th>
+				      <th>已投标人数</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    	<tr>
+				    	<td>${projectID}</td>
+						<td><a href="#">${name}</a></td>
+						<td>${language}</td>
+						<td>${platform}</td>
+						<td>${education}</td>
+						<td>${experience}</td>
+						<td>${time}</td>
+						<td>${price}</td>
+						<td>${num}</td>
+						<td>${tendernum}</td>
+					</tr>
+			   </tbody>
+			</table> 
+			
+			<table class="table table-striped table-hover ">
+			  <thead>
+			    <tr>
+			          <th>开发者账号</th>
+				      <th>姓名</th>
+				      <th>性别</th>
+				      <th>学历</th>
+				      <th>擅长语言</th>
+				      <th>擅长平台</th>
+				      <th>经验</th>
+				      <th>期望</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <s:iterator value="list" id="dev"> 
+			    	<tr>
+				    	<td>${dev.account}</td>
+						<td><a href="#">${dev.name}</a></td>
+						<td>${dev.sex}</td>
+						<td>${dev.graduate}</td>
+						<td>${dev.language}</td>
+						<td>${dev.platform}</td>
+						<td>${dev.experience}</td>
+						<td>${dev.price}</td>
+						<td><a href="#">将其加入项目</a></td>
+					</tr>
+				</s:iterator>
+			   </tbody>
+			</table> 
+	</div></div></div>
+	
 </div>
 	
 	

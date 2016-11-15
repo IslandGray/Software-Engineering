@@ -95,5 +95,14 @@
 	    <action name="neederEditSave" class="Needer.NeederEditSave" method="edit">
 	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederHomepage.jsp</result>
 	    </action>
+	    <action name="neederTendering" class="Needer.NeederTendering" method="tendering">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederTendering.jsp</result>
+	    </action>
+	    <action name="neederSelect" class="Needer.NeederSelect" method="select">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederSelect.jsp</result>
+	    </action>
+	    <action name="neederAddDev" class="Needer.NeederAddDev" method="add">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/.jsp</result>
+	    </action>
     </package>
 </struts>
