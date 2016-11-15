@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>正在招标</title>
+	<title>招标选择</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -98,7 +98,7 @@
 			</nav>
 			<div class="page-header">
 				<h1>
-					正在招标 <small>Tendering</small>
+					招标选择 <small>Selecting</small>
 				</h1>
 			</div> 
 		</div>
@@ -123,22 +123,46 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <s:iterator value="list" id="pro"> 
 			    	<tr>
-				    	<td>${pro.id}</td>
-
-						<td>${pro.name}</a></td>
-						<td>${pro.language}</td>
-						<td>${pro.platform}</td>
-						<td>${pro.education}</td>
-						<td>${pro.experience}</td>
-						<td>${pro.time}</td>
-						<td>${pro.price}</td>
-						<td>${pro.num}</td>
-						<td>${tenderNum}</td>
-
-						<td><a href="neederSelect.action?inputEmail=${inputEmail}&projectID=${pro.id}&name=${pro.name}&platform=${pro.platform}&education=${pro.education}&price=${pro.price}&experience=${pro.experience}&time=${pro.time}&num=${pro.num}&tendernum=${tenderNum}&language=${pro.language}">开始筛选</a></td>
-
+				    	<td>${projectID}</td>
+						<td><a href="#">${name}</a></td>
+						<td>${language}</td>
+						<td>${platform}</td>
+						<td>${education}</td>
+						<td>${experience}</td>
+						<td>${time}</td>
+						<td>${price}</td>
+						<td>${num}</td>
+						<td>${tendernum}</td>
+					</tr>
+			   </tbody>
+			</table> 
+			
+			<table class="table table-striped table-hover ">
+			  <thead>
+			    <tr>
+			          <th>开发者账号</th>
+				      <th>姓名</th>
+				      <th>性别</th>
+				      <th>学历</th>
+				      <th>擅长语言</th>
+				      <th>擅长平台</th>
+				      <th>经验</th>
+				      <th>期望</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <s:iterator value="list" id="dev"> 
+			    	<tr>
+				    	<td>${dev.account}</td>
+						<td><a href="#">${dev.name}</a></td>
+						<td>${dev.sex}</td>
+						<td>${dev.graduate}</td>
+						<td>${dev.language}</td>
+						<td>${dev.platform}</td>
+						<td>${dev.experience}</td>
+						<td>${dev.price}</td>
+						<td><a href="#">将其加入项目</a></td>
 					</tr>
 				</s:iterator>
 			   </tbody>

@@ -105,7 +105,7 @@
 			<ul class="nav nav-pills nav-stacked">
 			<li class="active"><a href="#">系统推荐</a></li>
 			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
-			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a></li>
+			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标<span class="badge"></span></a></li>
 			<li><a href="#">账户管理</a></li>
 			<li><a href="#">验证资料</a></li>
 			<li><a href="#">工作记录</a></li>
