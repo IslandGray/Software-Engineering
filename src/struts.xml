@@ -102,7 +102,10 @@
 	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederSelect.jsp</result>
 	    </action>
 	    <action name="neederAddDev" class="Needer.NeederAddDev" method="add">
-	      	<result name="SUCCESS">/WEB-INF/pages/Needer/.jsp</result>
+	      	<result name="SUCCESS" type="chain">neederTendering</result>
+	    </action>
+	    <action name="neederDoing" class="Needer.NeederDoing" method="doing">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederDoing.jsp</result>
 	    </action>
     </package>
 </struts>

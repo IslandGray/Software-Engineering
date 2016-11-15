@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>正在招标</title>
+	<title>正在进行</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -34,10 +34,10 @@
 						<li>
 							 <a href="#">发布项目</a>
 						</li>
-						<li class="active">
+						<li>
 							 <a href="neederTendering.action?inputEmail=${inputEmail}">正在招标</a>
 						</li>
-						<li>
+						<li class="active">
 							 <a href="neederDoing.action?inputEmail=${inputEmail}">正在进行</a>
 						</li>
 						<li class="dropdown">
@@ -98,7 +98,7 @@
 			</nav>
 			<div class="page-header">
 				<h1>
-					正在招标 <small>Tendering</small>
+					正在进行 <small>Doing</small>
 				</h1>
 			</div> 
 		</div>
@@ -118,8 +118,7 @@
 				      <th>经验要求</th>
 				      <th>工期</th>
 				      <th>报酬</th>
-				      <th>需要人数</th>
-				      <th>已投标人数</th>
+				      <th>人数</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -134,8 +133,7 @@
 						<td>${pro.time}</td>
 						<td>${pro.price}</td>
 						<td>${pro.num}</td>
-						<td>${tenderNum}</td>
-						<td><a href="neederSelect.action?inputEmail=${inputEmail}&projectID=${pro.id}&name=${pro.name}&platform=${pro.platform}&education=${pro.education}&price=${pro.price}&experience=${pro.experience}&time=${pro.time}&num=${pro.num}&tendernum=${tenderNum}&language=${pro.language}">开始筛选</a></td>
+						<td><a href="#?inputEmail=${inputEmail}&projectID=${pro.id}&name=${pro.name}&platform=${pro.platform}&education=${pro.education}&price=${pro.price}&experience=${pro.experience}&time=${pro.time}&num=${pro.num}&tendernum=${tenderNum}&language=${pro.language}">确认结束</a></td>
 					</tr>
 				</s:iterator>
 			   </tbody>

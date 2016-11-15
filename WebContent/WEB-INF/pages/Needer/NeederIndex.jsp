@@ -38,7 +38,7 @@
 							 <a href="neederTendering.action?inputEmail=${inputEmail}">正在招标</a>
 						</li>
 						<li>
-							 <a href="#">正在进行</a>
+							 <a href="neederDoing.action?inputEmail=${inputEmail}">正在进行</a>
 						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
