@@ -36,7 +36,7 @@ public class DevDoing {
 		      if(rs.next()){
 		    	  id=rs.getString("Doing");
 		    	  if(id==null){
-		    		  id="#";
+		    		  id="нч";
 		    		  return "SUCCESS";
 		    	  }
 		    	  rs = stmt.executeQuery("select * from Project where ID='"+id+"'");

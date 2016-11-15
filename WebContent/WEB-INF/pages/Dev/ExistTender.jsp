@@ -107,7 +107,7 @@
 							无法投标
 						</h1>
 						<p>
-							你当前已经存在一个进行中的工作或投标，点击返回
+							你当前已经存在一个进行中的工作，或已经参与该投标，点击返回
 						</p>
 						<p>
 							 <a class="btn btn-primary btn-large" href="devtoMarket.action?inputAccount=${inputAccount}">返回</a>

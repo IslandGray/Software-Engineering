@@ -35,7 +35,7 @@
 							 <a href="#">发布项目</a>
 						</li>
 						<li>
-							 <a href="#">正在招标</a>
+							 <a href="neederTendering.action?inputEmail=${inputEmail}">正在招标</a>
 						</li>
 						<li>
 							 <a href="#">正在进行</a>
