@@ -107,5 +107,11 @@
 	    <action name="neederDoing" class="Needer.NeederDoing" method="doing">
 	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederDoing.jsp</result>
 	    </action>
+	    <action name="creatProject" class="Needer.NeederIndex" method="IndexTrans">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/CreatProject.jsp</result>
+	    </action>
+	    <action name="creatProjectSave" class="Needer.CreatProject" method="creat">
+	      	<result name="SUCCESS" type="chain">neederTendering</result>
+	    </action>
     </package>
 </struts>

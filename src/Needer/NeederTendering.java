@@ -40,35 +40,37 @@ public class NeederTendering {
 		    		  String[] projectID=projectIDtemp.split("&");
 		    		  for(int i=0;i<projectID.length;i++){
 			    		  rs = stmt.executeQuery("select * from Project where ID='"+projectID[i]+"'");
-					      while(rs.next() & rs.getString("Status").equals("招标中")){
-					    	  String id=rs.getString("ID");
-					    	  String name = rs.getString("Name");
-					    	  String company = rs.getString("Needer");
-					    	  int num = rs.getInt("Num");
-					    	  String language = rs.getString("Language");
-					    	  String platform = rs.getString("Platform");
-					    	  String  time = rs.getString("Time");
-					    	  String price = rs.getString("Price");
-					    	  String status = rs.getString("Status");
-					    	  String experience = rs.getString("Experience");
-					    	  String education = rs.getString("Education");
-					    	  String[] worker = null;
-					    	  String[] waiter = null;
-					    	  try{
-					    		  worker = rs.getString("worker").split("&");
-					    	  }catch(Exception e){
-					    		  worker = null;
+					      while(rs.next()){
+					    	  if(rs.getString("Status").equals("招标中")){
+					    		  String id=rs.getString("ID");
+						    	  String name = rs.getString("Name");
+						    	  String company = rs.getString("Needer");
+						    	  int num = rs.getInt("Num");
+						    	  String language = rs.getString("Language");
+						    	  String platform = rs.getString("Platform");
+						    	  String  time = rs.getString("Time");
+						    	  String price = rs.getString("Price");
+						    	  String status = rs.getString("Status");
+						    	  String experience = rs.getString("Experience");
+						    	  String education = rs.getString("Education");
+						    	  String[] worker = null;
+						    	  String[] waiter = null;
+						    	  try{
+						    		  worker = rs.getString("worker").split("&");
+						    	  }catch(Exception e){
+						    		  worker = null;
+						    	  }
+						    	  try{
+						    		  waiter = rs.getString("waiter").split("&");
+						    		  tenderNum=waiter.length;
+						    	  }catch(Exception e){
+						    		  waiter = null;
+						    		  tenderNum=0;
+						    	  }
+						    	  
+						    	  Project2 pro=new Project2(name, "", num, education, language, platform, experience, time, price, id, company, status,worker,waiter);
+						    	  list.add(pro);
 					    	  }
-					    	  try{
-					    		  waiter = rs.getString("waiter").split("&");
-					    		  tenderNum=waiter.length;
-					    	  }catch(Exception e){
-					    		  waiter = null;
-					    		  tenderNum=0;
-					    	  }
-					    	  
-					    	  Project2 pro=new Project2(name, "", num, education, language, platform, experience, time, price, id, company, status,worker,waiter);
-					    	  list.add(pro);
 					      }
 			    	  }
 		    	  }catch(Exception e){

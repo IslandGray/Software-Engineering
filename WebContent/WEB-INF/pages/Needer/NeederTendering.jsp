@@ -32,7 +32,7 @@
 							 <a href="neederEditPre.action?inputEmail=${inputEmail}">企业主页</a>
 						</li>
 						<li>
-							 <a href="#">发布项目</a>
+							 <a href="creatProject.action?inputEmail=${inputEmail}">发布项目</a>
 						</li>
 						<li class="active">
 							 <a href="neederTendering.action?inputEmail=${inputEmail}">正在招标</a>

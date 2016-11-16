@@ -178,6 +178,6 @@ public class NeederSelect {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-
+}
 	
 	

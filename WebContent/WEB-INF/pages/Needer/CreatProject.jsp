@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>需求商企业主页</title>
+	<title>正在招标</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -27,17 +28,17 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active">
+						<li>
 							 <a href="neederEditPre.action?inputEmail=${inputEmail}">企业主页</a>
 						</li>
-						<li>
+						<li class="active">
 							 <a href="creatProject.action?inputEmail=${inputEmail}">发布项目</a>
 						</li>
 						<li>
 							 <a href="neederTendering.action?inputEmail=${inputEmail}">正在招标</a>
 						</li>
 						<li>
-							 <a href="neederDoing.action?inputEmail=${inputEmail}#">正在进行</a>
+							 <a href="neederDoing.action?inputEmail=${inputEmail}">正在进行</a>
 						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
@@ -97,72 +98,132 @@
 			</nav>
 			<div class="page-header">
 				<h1>
-					企业主页 <small>Index</small>
+					发布项目 <small>Creat Project</small>
 				</h1>
 			</div> 
 		</div>
 	</div>
 	
 	<div class="row clearfix">
-		<div class="col-md-3 column">
-			<ul class="nav nav-pills nav-stacked">
-				<li class="active"><a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a></li>
-				<li><a href="#">账号信息</a></li>
-				<li><a href="#">历史项目</a></li>
-			</ul>
-		</div>
-		<div class="col-md-9 column">
-			<form class="form-horizontal" action="neederEditSave.action?inputEmail=${inputEmail}&inputCompany=${inputCompany}" method="post" enctype="multipart/form-data">
+				<div class="col-md-8 column">
+					<form class="form-horizontal" action="creatProjectSave.action?inputEmail=${inputEmail}" method="post" enctype="multipart/form-data">
 					  <fieldset>
-					    <legend>注册信息</legend>
+					    <legend>项目信息</legend>
 					    <div class="form-group">
-					      <label for="inputEmail" class="col-lg-2 control-label">注册账号</label>
+					      <label for="inputName" class="col-lg-2 control-label">名称</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputEmail" value="${inputEmail}" disabled="">
+					        <input type="text" class="form-control" name="inputName" placeholder="Name">
 					      </div>
 					    </div>
 					    <div class="form-group">
-					      <label for="inputCompany" class="col-lg-2 control-label">企业名</label>
+					      <label for="textArea" class="col-lg-2 control-label">简介</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputCompany" value="${inputCompany}" disabled="">
+					        <textarea class="form-control" rows="3" name="inputSummary"></textarea>
+					        <span class="help-block">Input your project's imformation and special requirement</span>
 					      </div>
 					    </div>
 					    <div class="form-group">
-					      <label for="inputAccount" class="col-lg-2 control-label">用户名</label>
+					      <label for="inputNum" class="col-lg-2 control-label">需要人数</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAccount" value="${inputAccount}">
+					        <input type="text" class="form-control" name="inputNum" placeholder="Need Num">
 					      </div>
 					    </div>
 					    <div class="form-group">
-					      <label for="inputLocation" class="col-lg-2 control-label">所在地</label>
+					      <label for="inputLanguage" class="col-lg-2 control-label">开发语言</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputLocation" value="${inputLocation}">
+					        <input type="text" class="form-control" name="inputLanguage" placeholder="Language">
 					      </div>
 					    </div>
 					    <div class="form-group">
-					      <label for="inputAttention" class="col-lg-2 control-label">联系人</label>
+					      <label for="inputPlatform" class="col-lg-2 control-label">开发平台</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAttention" value="${inputAttention}">
+					        <select class="form-control" name="inputPlatform">
+					          <option>Windows</option>
+					          <option>Android</option>
+					          <option>iOS</option>
+					          <option>Web</option>
+					          <option>Linux</option>
+					          <option>Other</option>
+					        </select>
 					      </div>
 					    </div>
 					    <div class="form-group">
-					      <label for="inputNumber" class="col-lg-2 control-label">联系电话</label>
+					      <label for="inputEducation" class="col-lg-2 control-label">学历要求</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputNumber" value="${inputNumber}">
+					        <select class="form-control" name="inputEducation">
+					          <option>请选择...</option>
+					          <option>小学</option>
+					          <option>初中</option>
+					          <option>高中</option>
+					          <option>大学专科</option>
+					          <option>大学本科</option>
+					          <option>硕士</option>
+					          <option>博士</option>
+					        </select>
 					      </div>
 					    </div>
-					    
+					    <div class="form-group">
+					      <label for="inputExperience" class="col-lg-2 control-label">需要开发经验</label>
+					      <div class="col-lg-10">
+					        <input type="text" class="form-control" name="inputExperience" placeholder="Experience">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <label for="inputTime" class="col-lg-2 control-label">时间</label>
+					      <div class="col-lg-10">
+					        <input type="text" class="form-control" name="inputTime" placeholder="Time">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <label for="inputPrice" class="col-lg-2 control-label">预计报酬</label>
+					      <div class="col-lg-10">
+					        <input type="text" class="form-control" name="inputPrice" placeholder="Price">
+					      </div>
+					    </div>
+					    					    
 					    <div class="form-group">
 					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-danger">清空</button>
-					        <button type="submit" class="btn btn-primary">提交</button>
+					        <button type="reset" class="btn btn-default">Reset</button>
+					        <button type="submit" class="btn btn-primary">Submit</button>
 					      </div>
 					    </div>
 					    
 					  </fieldset>
 					</form>
-		</div>
-	</div>
+				</div>
+				<div class="col-md-4 column">
+					<dl>
+						<dt>
+							Description lists
+						</dt>
+						<dd>
+							A description list is perfect for defining terms.
+						</dd>
+						<dt>
+							Euismod
+						</dt>
+						<dd>
+							Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+						</dd>
+						<dd>
+							Donec id elit non mi porta gravida at eget metus.
+						</dd>
+						<dt>
+							Malesuada porta
+						</dt>
+						<dd>
+							Etiam porta sem malesuada magna mollis euismod.
+						</dd>
+						<dt>
+							Felis euismod semper eget lacinia
+						</dt>
+						<dd>
+							Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+						</dd>
+					</dl>
+				</div>
+			</div>
+	
 </div>
 	
 	
