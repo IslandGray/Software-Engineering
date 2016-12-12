@@ -88,6 +88,19 @@
 	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevIndex.jsp</result>
 	      	<result name="FAILURE" type="chain">devAccountPre</result>
 	    </action>
+	    
+	    <action name="devExPre" class="Dev.DevExPre" method="edit">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevExPre.jsp</result>
+	    </action>
+	    <action name="devEx" class="Dev.DevIndex" method="login">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevEx.jsp</result>
+	    </action>
+	    <action name="devExSave" class="Dev.DevExSave" method="edit">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevExPre.jsp</result>
+	    </action>
+	    <action name="devJobFinish" class="Dev.DevJobFinish" method="finish">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevJobFinish.jsp</result>
+	    </action>
     </package>
     <package name="NEEDER" extends="struts-default">
         <action name="gotoNeederHomepage" class="Needer.NeederIndex" method="IndexTrans">
@@ -110,6 +123,7 @@
 	    </action>
 	    <action name="neederAddDev" class="Needer.NeederAddDev" method="add">
 	      	<result name="SUCCESS" type="chain">neederTendering</result>
+	      	<result name="EXIST">/WEB-INF/pages/Needer/NeederAddDevExist.jsp</result>
 	    </action>
 	    <action name="neederDoing" class="Needer.NeederDoing" method="doing">
 	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederDoing.jsp</result>
@@ -119,6 +133,9 @@
 	    </action>
 	    <action name="creatProjectSave" class="Needer.CreatProject" method="creat">
 	      	<result name="SUCCESS" type="chain">neederTendering</result>
+	    </action>
+	    <action name="neederJobFinish" class="Needer.NeederJobFinish" method="finish">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederJobFinish.jsp</result>
 	    </action>
     </package>
 </struts>

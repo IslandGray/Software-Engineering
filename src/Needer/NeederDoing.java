@@ -38,7 +38,7 @@ public class NeederDoing {
 		    	  try{
 		    		  String[] projectID=projectIDtemp.split("&");
 		    		  for(int i=0;i<projectID.length;i++){
-			    		  rs = stmt.executeQuery("select * from Project where ID='"+projectID[i]+"' and Status='"+"正在进行"+"'");
+			    		  rs = stmt.executeQuery("select * from Project where ( Status='正在进行' or Status='等待确认' ) and ID='"+projectID[i]+"'");
 					      if(rs.next()){
 					    	  String id=rs.getString("ID");
 					    	  String name = rs.getString("Name");

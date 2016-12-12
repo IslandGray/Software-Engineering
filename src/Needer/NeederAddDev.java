@@ -30,7 +30,14 @@ public class NeederAddDev {
 			          "jdbc:mysql://localhost:3306/JOB","root","wcp19970221");
 			      System.out.println("Success connect Mysql server!");
 			      Statement stmt = connect.createStatement();
-			      ResultSet rs = stmt.executeQuery("select * from Project where ID='"+projectID+"'");
+			      ResultSet rs = stmt.executeQuery("select * from Developer where Account='"+devAccount+"'");
+			      if(rs.next()){
+			    	  String exist = rs.getString("Doing");
+			    	  if(!exist.equals(null))
+			    		  return "EXIST";
+			      }
+			      
+			      rs = stmt.executeQuery("select * from Project where ID='"+projectID+"'");
 			      if(rs.next()){
 			    	  
 			    	  String workerTemp=rs.getString("Worker");
