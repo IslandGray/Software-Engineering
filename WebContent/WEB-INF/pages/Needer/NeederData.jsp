@@ -130,7 +130,7 @@
 					    <div class="form-group">
 					      <label for="inputAccount" class="col-lg-2 control-label">用户名</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAccount" value="${inputAccount}">
+					        <input type="text" class="form-control" name="inputAccount" value="${inputAccount}" disabled="">
 					      </div>
 					    </div>
 					    <div class="form-group">

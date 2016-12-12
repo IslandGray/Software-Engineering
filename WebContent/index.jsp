@@ -33,28 +33,13 @@
 				
 					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					      <ul class="nav navbar-nav">
-					        <li><a href="#">Link</a></li>
+					        <li><a href="#">||</a></li>
 					        <li><a href="#">发布需求</a></li>
+					        <li><a href="#">||</a></li>
 					        <li><a href="#">投标</a></li>
-					        <li class="dropdown">
-					          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-					          <ul class="dropdown-menu" role="menu">
-					            <li><a href="#">Action</a></li>
-					            <li><a href="#">Another action</a></li>
-					            <li><a href="#">Something else here</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">Separated link</a></li>
-					            <li class="divider"></li>
-					            <li><a href="#">One more separated link</a></li>
-					          </ul>
-					        </li>
+					        <li><a href="#">||</a></li>
 					      </ul>
-					      <form class="navbar-form navbar-left" role="search">
-					        <div class="form-group">
-					          <input type="text" class="form-control" placeholder="Search">
-					        </div>
-					        <button type="submit" class="btn btn-default">Submit</button>
-					      </form>
+					      
 					      <ul class="nav navbar-nav navbar-right">
 					        <li><a href="LoginSwitch.action">登录</a></li>
 					        <li><a href="RegSwitch.action">注册</a></li>
@@ -74,6 +59,53 @@
 						 <a class="btn btn-primary btn-large" href="#">Learn more</a>
 					</p>
 				</div>
+				
+			<div class="carousel slide" id="carousel-16245">
+				<ol class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#carousel-16245">
+					</li>
+					<li data-slide-to="1" data-target="#carousel-16245">
+					</li>
+					<li data-slide-to="2" data-target="#carousel-16245">
+					</li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active">
+						<img alt="" src="1.jpg" />
+						<div class="carousel-caption">
+							<h4>
+								First Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<img alt="" src="2.jpg" />
+						<div class="carousel-caption">
+							<h4>
+								Second Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<img alt="" src="3.jpg" />
+						<div class="carousel-caption">
+							<h4>
+								Third Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+				</div> <a class="left carousel-control" href="#carousel-16245" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-16245" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>
+				
 			</div>
 		</div>
 		<div class="row clearfix">
@@ -93,7 +125,7 @@
 					<font face="微软雅黑">作为需求商</font>
 				</h2>
 				<p>
-					你可以随时发出软件需求，等待开发者前来投标，也可以根据我们的推荐联系已注册的开发者。
+					你是一家有开发需求的公司</br></br>你可以随时发出软件需求，等待开发者前来投标，也可以根据我们的推荐联系已注册的开发者。
 				</p>
 				<p>
 					 <a class="btn" href="#">View details »</a>

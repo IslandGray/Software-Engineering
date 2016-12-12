@@ -81,6 +81,13 @@
 	    <action name="devEditSave" class="Dev.DevEditSave" method="edit">
 	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevDataPre.jsp</result>
 	    </action>
+	    <action name="devAccountPre" class="Dev.DevAccountPre" method="pre">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevAccount.jsp</result>
+	    </action>
+	    <action name="devAccount" class="Dev.DevAccount" method="edit">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevIndex.jsp</result>
+	      	<result name="FAILURE" type="chain">devAccountPre</result>
+	    </action>
     </package>
     <package name="NEEDER" extends="struts-default">
         <action name="gotoNeederHomepage" class="Needer.NeederIndex" method="IndexTrans">
