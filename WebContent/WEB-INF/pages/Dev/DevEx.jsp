@@ -44,9 +44,6 @@
 						</div> <button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li>
-							 <a href="#">Link</a>
-						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputAccount}<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
@@ -54,10 +51,10 @@
 									 <a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a>
 								</li>
 								<li>
-									 <a href="#">Another action</a>
+									 <a href="devExPre.action?inputAccount=${inputAccount}">资料修改</a>
 								</li>
 								<li>
-									 <a href="#">Something else here</a>
+									 <a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a>
 								</li>
 								<li class="divider">
 								</li>

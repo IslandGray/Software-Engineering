@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>需求市场</title>
+	<title>正在进行</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -30,13 +30,16 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li>
-							 <a href="returnDevIndex.action?inputAccount=${inputAccount}">个人主页</a>
-						</li>
-						<li class="active">
-							 <a href="devtoMarket.action?inputAccount=${inputAccount}">需求市场</a>
+							 <a href="neederEditPre.action?inputEmail=${inputEmail}">企业主页</a>
 						</li>
 						<li>
-							 <a href="returnDevDoing.action?inputAccount=${inputAccount}">当前工作</a>
+							 <a href="creatProject.action?inputEmail=${inputEmail}">发布项目</a>
+						</li>
+						<li class="active">
+							 <a href="neederTendering.action?inputEmail=${inputEmail}">正在招标</a>
+						</li>
+						<li>
+							 <a href="neederDoing.action?inputEmail=${inputEmail}">正在进行</a>
 						</li>
 						
 					</ul>
@@ -46,18 +49,17 @@
 						</div> <button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputAccount}<strong class="caret"></strong></a>
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputEmail}<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
-									 <a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a>
+									 <a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a>
 								</li>
 								<li>
-									 <a href="devExPre.action?inputAccount=${inputAccount}">资料修改</a>
+									 <a href="neederAccountPre.action?inputEmail=${inputEmail}">账号信息</a>
 								</li>
 								<li>
-									 <a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a>
+									 <a href="neederHistory.action?inputEmail=${inputEmail}">历史项目</a>
 								</li>
 								<li class="divider">
 								</li>
@@ -71,7 +73,7 @@
 			</nav>
 		<div class="page-header">
 			<h1>
-				需求市场 <small>Market</small>
+				正在进行<small>Doing</small>
 			</h1>
 		</div>
 		
@@ -79,13 +81,13 @@
 				<div class="col-lg-10 col-lg-offset-1">
 					<div class="jumbotron well">
 						<h1>
-							无法投标
+							项目无法确认结束
 						</h1>
 						<p>
-							你当前已经存在一个进行中的工作，或已经参与该投标，点击返回
+							仍有开发者未进行完成确认，还不能关闭这个项目，点击返回
 						</p>
 						<p>
-							 <a class="btn btn-primary btn-large" href="devtoMarket.action?inputAccount=${inputAccount}">返回</a>
+							 <a class="btn btn-primary btn-large" href="neederDoing.action?inputEmail=${inputEmail}">返回</a>
 						</p>
 					</div>
 				</div>

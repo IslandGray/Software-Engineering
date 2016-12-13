@@ -25,9 +25,16 @@ public class DevJobFinish {
 		      Statement stmt = connect.createStatement();
 		      ResultSet rs = stmt.executeQuery("select * from Developer where Account='"+inputAccount+"'");
 		      if(rs.next()){
-		    	  
 		    	  stmt.executeUpdate("update Developer set Doing=NULL where Account='"+inputAccount+"'");
-		    	  stmt.executeUpdate("insert into History values('"+inputAccount+"','"+inputProjectID+"','等待确认')");
+		    	  
+		    	  rs = stmt.executeQuery("select * from History where Project='"+inputProjectID+"'");
+		    	  if(rs.next()){
+		    		  stmt.executeUpdate("update History set Developer='"+rs.getString("Developer")+"&"+inputAccount+"' where Project='"+inputProjectID+"'");
+		    	  }
+		    	  else{
+		    		  stmt.executeUpdate("insert into History values('"+inputAccount+"','"+inputProjectID+"','等待其他开发者确认')");
+		    	  }
+		    	  
 		    	  stmt.executeUpdate("update Project set Status='等待确认' where ID='"+inputProjectID+"'");
 		    	  //stmt.executeUpdate("update Developer set Sex='"+inputSex+"' where Account='"+inputAccount+"'");
 		      }  
