@@ -29,7 +29,7 @@ public class LoginNeed extends ActionSupport{
 		      if(rs.next()){
 		    	  System.out.println("Match EmailAccount Success!");
 		    	  ccname=rs.getString("Company");
-		    	  ResultSet rs_p = stmt.executeQuery("select * from Project ");
+		    	  ResultSet rs_p = stmt.executeQuery("select * from Project where Status='招标中' or Status='正在进行'");
 		    	  while(rs_p.next())
 		            {
 		    		  if(rs_p.getString("Needer").equals(ccname)){

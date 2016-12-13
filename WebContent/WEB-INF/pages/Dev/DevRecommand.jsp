@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,9 +45,7 @@
 						</div> <button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li>
-							 <a href="#">Link</a>
-						</li>
+						
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputAccount}<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
@@ -80,54 +79,56 @@
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
-			<li><a href="devRecommand.action?inputAccount=${inputAccount}">系统推荐</a></li>
+			<li class="active"><a href="devRecommand.action?inputAccount=${inputAccount}">系统推荐</a></li>
 			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
 			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标<span class="badge"></span></a></li>
 			<li><a href="devAccountPre.action?inputAccount=${inputAccount}">账户管理</a></li>
-			<li class="active"><a href="devExPre.action?inputAccount=${inputAccount}">管理资料</a></li>
+			<li><a href="devExPre.action?inputAccount=${inputAccount}">资料管理</a></li>
 			<li><a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a></li>
 			</ul>
 		</div>
 		<div class="col-md-9 column">
-			<form class="form-horizontal" action="devExSave.action?inputAccount=${inputAccount}" method="post" enctype="multipart/form-data">
-					  <fieldset>
-					    <legend>完善资料</legend>
-					    <div class="form-group">
-					      <label for="inputName" class="col-lg-2 control-label">擅长语言</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputLanguage" value="${inputLanguage}">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputPlatform" class="col-lg-2 control-label">开发平台</label>
-					      <div class="col-lg-10">
-					        <select class="form-control" name="inputPlatform">
-					          <option>Windows</option>
-					          <option>Android</option>
-					          <option>iOS</option>
-					          <option>Web</option>
-					          <option>Linux</option>
-					          <option>Other</option>
-					        </select>
-					      </div>
-					    </div>
-					    
-					    <div class="form-group">
-					      <label for="inputID" class="col-lg-2 control-label">开发经验</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputExperience" value="${inputExperience}">
-					      </div>
-					    </div>
-					    
-					    <div class="form-group">
-					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-default">Reset</button>
-					        <button type="submit" class="btn btn-primary">Submit</button>
-					      </div>
-					    </div>
-					    
-					  </fieldset>
-					</form>
+			<div class="well bs-component">
+			<tr>
+			    	<td>为您找到了符合“${platform}”上的 或“${language}”语言的${list.size()}条推荐项目：</td>
+
+			</tr>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+					  <th>任务ID</th>
+				      <th>项目名</th>
+				      <th>委托方</th>
+				      <th>编程语言</th>
+				      <th>平台</th>
+				      <th>学历要求</th>
+				      <th>经验要求</th>
+				      <th>工期</th>
+				      <th>报酬</th>
+				      <th>人数</th>
+				      <th>状态</th>
+					</tr>
+				</thead>
+				<tbody>
+					<s:iterator value="list" id="pro"> 
+						<tr>
+							<td>${pro.id}</td>
+							<td><a href="#">${pro.name}</a></td>
+							<td><a href="#">${pro.needer}</a></td>
+							<td>${pro.language}</td>
+							<td>${pro.platform}</td>
+							<td>${pro.education}</td>
+							<td>${pro.experience}</td>
+							<td>${pro.time}</td>
+							<td>${pro.price}</td>
+							<td>${pro.num}</td>
+							<td>${pro.status}</td>
+							<td><a href="devTender.action?itemID=${pro.id}&inputAccount=${inputAccount}" >投标</a></td>
+						</tr>
+					</s:iterator> 
+				</tbody>
+			</table>
+		</div>
 		</div>
 	</div>
 </div>

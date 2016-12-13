@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -106,61 +107,31 @@
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
-				<li class="active"><a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a></li>
+				<li><a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a></li>
 				<li><a href="neederAccountPre.action?inputEmail=${inputEmail}">账号信息</a></li>
-				<li><a href="neederHistory.action?inputEmail=${inputEmail}">历史项目</a></li>
+				<li class="active"><a href="neederHistory.action?inputEmail=${inputEmail}">历史项目</a></li>
 			</ul>
 		</div>
 		<div class="col-md-9 column">
-			<form class="form-horizontal" action="neederEditSave.action?inputEmail=${inputEmail}&inputCompany=${inputCompany}" method="post" enctype="multipart/form-data">
-					  <fieldset>
-					    <legend>注册信息</legend>
-					    <div class="form-group">
-					      <label for="inputEmail" class="col-lg-2 control-label">注册账号</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputEmail" value="${inputEmail}" disabled="">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputCompany" class="col-lg-2 control-label">企业名</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputCompany" value="${inputCompany}" disabled="">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputAccount" class="col-lg-2 control-label">用户名</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAccount" value="${inputAccount}" disabled="">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputLocation" class="col-lg-2 control-label">所在地</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputLocation" value="${inputLocation}">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputAttention" class="col-lg-2 control-label">联系人</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAttention" value="${inputAttention}">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputNumber" class="col-lg-2 control-label">联系电话</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputNumber" value="${inputNumber}">
-					      </div>
-					    </div>
-					    
-					    <div class="form-group">
-					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-danger">清空</button>
-					        <button type="submit" class="btn btn-primary">提交</button>
-					      </div>
-					    </div>
-					    
-					  </fieldset>
-					</form>
+			<table class="table table-striped table-hover ">
+			  <thead>
+			    <tr>
+			          <th>开发者</th>
+				      <th>项目号</th>
+				      <th>状态</th>
+			       
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <s:iterator value="list" id="pro"> 
+			    	<tr>
+				    	<td>${pro.developer}</td>
+						<td><a href="#">${pro.project}</a></td>
+						<td>${pro.status}</td>
+					</tr>
+				</s:iterator>
+			  </tbody>
+			</table>
 		</div>
 	</div>
 </div>
