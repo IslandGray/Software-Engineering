@@ -13,13 +13,15 @@ import SQL.Project2;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
-public class NeederRecommend {
+public class NeederInviteDev {
 	private String inputEmail;
+	private String devAccount;
 	private String projectID;
 	private String Needer;
 	private List<Developer> list = new ArrayList<Developer>();
 	
 	private String name;
+	private String language;
 	private String platform;
 	private String education;
 	private String experience;
@@ -27,9 +29,8 @@ public class NeederRecommend {
 	private String num;
 	private String tendernum;
 	private String price;
-	private String language;
-	
-	public String recommend() throws Exception{
+	// stmt.executeUpdate("insert into rec_data values('"+devAccount+"','"+Needer+"','"+projectID+"')");
+	public String invite() throws Exception{
 		try {
 		      Class.forName("com.mysql.jdbc.Driver");     //¼ÓÔØMYSQL JDBCÇý¶¯³ÌÐò   
 		     System.out.println("Success loading Mysql Driver!");
@@ -47,6 +48,7 @@ public class NeederRecommend {
 		      Statement stmt1 = connect.createStatement();
 		      Statement stmt2 = connect.createStatement();
 		      Statement stmt3 = connect.createStatement();
+		      stmt.executeUpdate("insert into rec_data values('"+devAccount+"','"+Needer+"','"+projectID+"')");
 		      ResultSet rs = stmt.executeQuery("select * from Developer ");
 		      System.out.println(language+projectID);
 		      try{
@@ -55,6 +57,8 @@ public class NeederRecommend {
 		    		  language=rp.getString("Language");
 				      platform=rp.getString("Platform");
 				      experience=rp.getString("Experience");
+				      name=rp.getString("Name");
+				      price=rp.getString("Price");
 		    	  }
 		    	  while(rs.next()){
 			    	  String devname = rs.getString("Name");
@@ -112,14 +116,6 @@ public class NeederRecommend {
 		this.projectID = projectID;
 	}
 
-	public List<Developer> getList() {
-		return list;
-	}
-
-	public void setList(List<Developer> list) {
-		this.list = list;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -128,6 +124,13 @@ public class NeederRecommend {
 		this.name = name;
 	}
 
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
 
 	public String getPlatform() {
 		return platform;
@@ -193,12 +196,21 @@ public class NeederRecommend {
 		Needer = needer;
 	}
 	
-	public String getLanguage() {
-		return language;
+	public String getDevAccount() {
+		return devAccount;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
+	public void setDevAccount(String devAccount) {
+		this.devAccount = devAccount;
 	}
+
+	public List<Developer> getList() {
+		return list;
+	}
+
+	public void setList(List<Developer> list) {
+		this.list = list;
+	}
+	
 	
 }

@@ -110,7 +110,7 @@
 			<table class="table table-striped table-hover ">
 			  <thead>
 			    <tr>
-			          <th>任务ID</th>
+			          <th>项目ID</th>
 				      <th>项目名</th>
 				      <th>编程语言</th>
 				      <th>平台</th>
@@ -132,7 +132,7 @@
 						<td>${pro.education}</td>
 						<td>${pro.experience}年</td>
 						<td>${pro.time}天</td>
-						<td>${pro.price}</td>
+						<td>${pro.price}元</td>
 						<td>${pro.num}</td>
 						<td>${pro.tenderNum}</td>
 

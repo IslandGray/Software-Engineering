@@ -107,7 +107,14 @@
 	    <action name="devRecommand" class="Dev.DevRecommand" method="recommand">
 	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevRecommand.jsp</result>
 	    </action>
+	    <action name="devReceiveInvite" class="Dev.DevReceiveInvite" method="receive">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevReceiveInvite.jsp</result>
+	    </action>
+	    <action name="devConfirmRec" class="Dev.DevConfirmRec" method="confirm">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevReceiveInvite.jsp</result>
+	    </action>
     </package>
+    
     <package name="NEEDER" extends="struts-default">
         <action name="gotoNeederHomepage" class="Needer.NeederIndex" method="IndexTrans">
 	      	<result name="SUCCESS">neederEditPre.action</result>
@@ -143,6 +150,9 @@
 	    <action name="neederRec" class="Needer.NeederRecommend" method="recommend">
 	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederRecommend.jsp</result>
 		</action>
+		<action name="neederInviteDev" class="Needer.NeederInviteDev" method="invite">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederRecommend.jsp</result>
+	    </action>
 	    <action name="neederJobFinish" class="Needer.NeederJobFinish" method="finish">
 	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederJobFinish.jsp</result>
 	    </action>

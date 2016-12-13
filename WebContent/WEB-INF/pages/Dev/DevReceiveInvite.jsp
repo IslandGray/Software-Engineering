@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>系统推荐</title>
+	<title>开发者主页</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -28,42 +28,16 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li>
-							 <a href="neederEditPre.action?inputEmail=${inputEmail}">企业主页</a>
-						</li>
-						<li>
-							 <a href="creatProject.action?inputEmail=${inputEmail}">发布项目</a>
-						</li>
 						<li class="active">
-							 <a href="neederTendering.action?inputEmail=${inputEmail}">正在招标</a>
+							 <a href="returnDevIndex.action?inputAccount=${inputAccount}">个人主页</a>
 						</li>
 						<li>
-							 <a href="neederDoing.action?inputEmail=${inputEmail}">正在进行</a>
+							 <a href="devtoMarket.action?inputAccount=${inputAccount}">需求市场</a>
 						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									 <a href="#">Action</a>
-								</li>
-								<li>
-									 <a href="#">Another action</a>
-								</li>
-								<li>
-									 <a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">Separated link</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">One more separated link</a>
-								</li>
-							</ul>
+						<li>
+							 <a href="returnDevDoing.action?inputAccount=${inputAccount}">当前工作</a>
 						</li>
+						
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
@@ -75,10 +49,10 @@
 							 <a href="#">Link</a>
 						</li>
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputEmail}<strong class="caret"></strong></a>
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputAccount}<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
-									 <a href="#">个人主页</a>
+									 <a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a>
 								</li>
 								<li>
 									 <a href="#">Another action</a>
@@ -98,88 +72,63 @@
 			</nav>
 			<div class="page-header">
 				<h1>
-					项目信息 <small>Project Information</small>
+					个人主页 <small>Index</small>
 				</h1>
 			</div> 
 		</div>
 	</div>
 	
-	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1">
-			<div class="well bs-component"> 
+	<div class="row clearfix">
+		<div class="col-md-3 column">
+			<ul class="nav nav-pills nav-stacked">
+			<li><a href="devRecommand.action?inputAccount=${inputAccount}">系统推荐</a></li>
+			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
+			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标<span class="badge"></span></a></li>
+			<li><a href="devAccountPre.action?inputAccount=${inputAccount}">账户管理</a></li>
+			<li class="active"><a href="devReceiveInvite.action?inputAccount=${inputAccount}">项目邀请<span class="badge">${list.size()}</span></a></li>
+			<li><a href="devExPre.action?inputAccount=${inputAccount}">管理资料</a></li>
+			<li><a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9 column">
 			<table class="table table-striped table-hover ">
 			  <thead>
 			    <tr>
 			          <th>项目ID</th>
 				      <th>项目名</th>
-				      <th>发布企业</th>
+				      <th>邀请方</th>
 				      <th>编程语言</th>
 				      <th>平台</th>
 				      <th>学历要求</th>
 				      <th>经验要求</th>
-				      <th>工期</th>
-				      <th>报酬</th>
-				      <th>需要人数</th>
+				      <th>预计工期</th>
+				      <th>预计报酬</th>
+				      <th>人数</th>
 				      <th>已招标人数</th>
+			       
 			    </tr>
 			  </thead>
 			  <tbody>
+			    <s:iterator value="list" id="pro"> 
 			    	<tr>
-				    	<td>${projectID}</td>
-						<td><a href="#">${name}</a></td>
-						<td>${Needer}</td>
-						<td>${language}</td>
-						<td>${platform}</td>
-						<td>${education}</td>
-						<td>${experience}年</td>
-						<td>${time}天</td>
-						<td>${price}元</td>
-						<td>${num}</td>
-						<td>${tendernum}</td>
-					</tr>
-			   </tbody>
-			</table> 
-			
-	</div></div></div>
-	
-	
-	<div class="page-header">
-				<h1>
-					系统推荐 <small>Recommendation</small>
-				</h1>
-			</div>
-
-	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1">
-			<div class="well bs-component">
-	        <table class="table table-striped table-hover ">
-			  <thead>
-			    <tr>
-			          <th>开发者账号</th>
-				      <th>姓名</th>
-				      <th>性别</th>
-				      <th>学历</th>
-				      <th>擅长语言</th>
-				      <th>擅长平台</th>
-				      <th>开发经验</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <s:iterator value="list" id="dev"> 
-			    	<tr>
-				    	<td>${dev.account}</td>
-						<td><a href="#">${dev.name}</a></td>
-						<td>${dev.sex}</td>
-						<td>${dev.graduate}</td>
-						<td>${dev.language}</td>
-						<td>${dev.platform}</td>
-						<td>${dev.experience}年</td>
-						<td><a href="neederInviteDev.action?devAccount=${dev.account}&projectID=${projectID}&inputEmail=${inputEmail}&language=${language}&Needer=${Needer}&platform=${platform}&education=${education}&experience=${experience}&time=${time}&num=${num}&tendernum=${tendernum}">邀请其加入项目</a></td>
+				    	<td>${pro.id}</td>
+						<td><a href="#">${pro.name}</a></td>
+						<td><a href="#">${pro.needer}</a></td>
+						<td>${pro.language}</td>
+						<td>${pro.platform}</td>
+						<td>${pro.education}</td>
+						<td>${pro.experience}年</td>
+						<td>${pro.time}天</td>
+						<td>${pro.price}元</td>
+						<td>${pro.num}</td>
+						<td>${pro.tenderNum}</td>
+						<td><a href="devConfirmRec.action?inputAccount=${inputAccount}&projectID=${pro.id}">同意邀请</a></td>
 					</tr>
 				</s:iterator>
-			   </tbody>
-			</table> 
-	</div></div></div>
+			  </tbody>
+			</table>
+		</div>
+	</div>
 </div>
 	
 	
