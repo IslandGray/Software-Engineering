@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>开发者登录</title>
+	<title>需求商详情</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -16,6 +17,7 @@
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
+		
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.jsp">Brand</a>
@@ -23,10 +25,10 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active">
-							 <a href="LoginDev.action">开发者登陆</a>
+							 <a href="#">需求商详情页</a>
 						</li>
 						<li>
-							 <a href="LoginNeed.action">需求商登陆</a>
+							 <a href="#">--></a>
 						</li>
 						
 					</ul>
@@ -35,66 +37,64 @@
 							<input type="text" class="form-control" />
 						</div> <button type="submit" class="btn btn-default">Submit</button>
 					</form>
+					<ul class="nav navbar-nav navbar-right">
+						
+					</ul>
 				</div>
 			</nav>
+			
 			<div class="row clearfix">
-				<div class="col-md-8 column">
-					<form class="form-horizontal" action="LoginDevSubmit.action" method="post" enctype="multipart/form-data">
-					  <fieldset>
-					    <legend>开发者登陆</legend>
-					    <div class="form-group">
-					      <label for="inputAccount" class="col-lg-2 control-label">账号</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAccount" placeholder="手机号/邮箱">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputPassword" class="col-lg-2 control-label">密码</label>
-					      <div class="col-lg-10">
-					        <input type="password" class="form-control" name="inputPassword" placeholder="Password">
-					      </div>
-					    </div>
-					    
-					    <div class="form-group">
-					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-default">Reset</button>
-					        <button type="submit" class="btn btn-primary">Submit</button>
-					      </div>
-					    </div>
-					    
-					  </fieldset>
-					</form>
+				<div class="col-md-6 column">
+					<div class="list-group">
+						 <a href="#" class="list-group-item active">企业名</a>
+						<div class="list-group-item">
+							${inputCompany}
+						</div>
+					</div>
+					<div class="list-group">
+						 <a href="#" class="list-group-item active">所在地</a>
+						<div class="list-group-item">
+							${location}
+						</div>
+					</div>
+					<div class="list-group">
+						 <a href="#" class="list-group-item active">联系人</a>
+						<div class="list-group-item">
+							${attention}
+						</div>
+					</div>
+					<div class="list-group">
+						 <a href="#" class="list-group-item active">联系电话</a>
+						<div class="list-group-item">
+							${number}
+						</div>
+					</div>
+					<div class="list-group">
+						  <a class="list-group-item active"> <span class="badge">${list.size()}</span> 项目历史纪录</a>
+					</div>
 				</div>
-				<div class="col-md-4 column">
-					<dl>
-						<dt>
+				
+				<div class="col-md-6 column">
+					<table class="table">
+						<thead>
+							<tr>
+								  <th>项目ID</th>
+							      <th>项目名</th>
+							      <th>状态</th>
+							</tr>
+						</thead>
+						<tbody>
+							<s:iterator value="list" id="pro"> 
+						    	<tr>
+							    	<td>${pro.project}</td>
+									<td><a href="#">${pro.project}</a></td>
+									<td>${pro.status}</td>
+								</tr>
+							</s:iterator>
 							
-						</dt>
-						<dd>
-							
-						</dd>
-						<dt>
-							
-						</dt>
-						<dd>
-							
-						</dd>
-						<dd>
-							
-						</dd>
-						<dt>
-							
-						</dt>
-						<dd>
-							
-						</dd>
-						<dt>
-							
-						</dt>
-						<dd>
-							
-						</dd>
-					</dl>
+						</tbody>
+					</table>
+					 <a class="btn btn-primary btn-large" href="#" onclick="history.back()">返回</a>
 				</div>
 			</div>
 			

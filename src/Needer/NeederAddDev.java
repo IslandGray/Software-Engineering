@@ -33,8 +33,9 @@ public class NeederAddDev {
 			      ResultSet rs = stmt.executeQuery("select * from Developer where Account='"+devAccount+"'");
 			      if(rs.next()){
 			    	  String exist = rs.getString("Doing");
-			    	  if(!exist.equals(null))
+			    	  if(exist!=null ){
 			    		  return "EXIST";
+			    	  }
 			      }
 			      
 			      rs = stmt.executeQuery("select * from Project where ID='"+projectID+"'");

@@ -52,10 +52,10 @@
 									 <a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a>
 								</li>
 								<li>
-									 <a href="#">Another action</a>
+									 <a href="devExPre.action?inputAccount=${inputAccount}">资料修改</a>
 								</li>
 								<li>
-									 <a href="#">Something else here</a>
+									 <a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a>
 								</li>
 								<li class="divider">
 								</li>
@@ -82,8 +82,8 @@
 			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
 			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标<span class="badge"></span></a></li>
 			<li><a href="devAccountPre.action?inputAccount=${inputAccount}">账户管理</a></li>
-			<li><a href="#">资料管理</a></li>
-			<li><a href="#">工作记录</a></li>
+			<li><a href="devExPre.action?inputAccount=${inputAccount}">资料管理</a></li>
+			<li><a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a></li>
 			</ul>
 		</div>
 		<div class="col-md-9 column">
