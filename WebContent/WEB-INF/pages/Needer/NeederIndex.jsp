@@ -40,30 +40,7 @@
 						<li>
 							 <a href="neederDoing.action?inputEmail=${inputEmail}">正在进行</a>
 						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									 <a href="#">Action</a>
-								</li>
-								<li>
-									 <a href="#">Another action</a>
-								</li>
-								<li>
-									 <a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">Separated link</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">One more separated link</a>
-								</li>
-							</ul>
-						</li>
+						
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
@@ -71,20 +48,17 @@
 						</div> <button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li>
-							 <a href="#">Link</a>
-						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputEmail}<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
-									 <a href="#">个人主页</a>
+									 <a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a>
 								</li>
 								<li>
-									 <a href="#">Another action</a>
+									 <a href="neederAccountPre.action?inputEmail=${inputEmail}">账号信息</a>
 								</li>
 								<li>
-									 <a href="#">Something else here</a>
+									 <a href="neederHistory.action?inputEmail=${inputEmail}">历史项目</a>
 								</li>
 								<li class="divider">
 								</li>

@@ -52,10 +52,10 @@
 									 <a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a>
 								</li>
 								<li>
-									 <a href="#">Another action</a>
+									 <a href="devExPre.action?inputAccount=${inputAccount}">资料修改</a>
 								</li>
 								<li>
-									 <a href="#">Something else here</a>
+									 <a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a>
 								</li>
 								<li class="divider">
 								</li>
@@ -96,14 +96,13 @@
 			    <tr>
 			    	<td>${id}</td>
 			      	<td><a href="#">${name}</a></td>
-			      	<td><a href="#">${company}</a></td>
+			      	<td><a href="findNeeder.action?inputCompany=${company}">${company}</a></td>
 			      	<td>${language}</td>
 			      	<td>${platform}</td>
 			      	<td>${time}</td>
 			      	<td>${Price}</td>
 			      	<td>${num}</td>
 			      	<td>${status}</td>
-			      	<td><a href="devJobFinish.action?inputAccount=${inputAccount}&inputProjectID=${id}">提交工作</a></td>
 			    </tr>
 			    </tbody>
 			</table> 

@@ -27,93 +27,76 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active">
-							 <a href="#">Link</a>
+						<li>
+							 <a href="LoginDev.action">开发者登陆</a>
 						</li>
 						<li>
-							 <a href="#">Link</a>
+							 <a href="LoginNeed.action">需求商登陆</a>
 						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									 <a href="#">Action</a>
-								</li>
-								<li>
-									 <a href="#">Another action</a>
-								</li>
-								<li>
-									 <a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">Separated link</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">One more separated link</a>
-								</li>
-							</ul>
-						</li>
+						
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
 							<input type="text" class="form-control" />
 						</div> <button type="submit" class="btn btn-default">Submit</button>
 					</form>
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							 <a href="#">Link</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									 <a href="#">Action</a>
-								</li>
-								<li>
-									 <a href="#">Another action</a>
-								</li>
-								<li>
-									 <a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">Separated link</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
 				</div>
 			</nav>
 			<div class="row clearfix">
 				<div class="col-md-6 column">
-					<div class="jumbotron well">
-						<h1>
+					<div class="jumbotron well" >
+					</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center><h1 style="font-family:Microsoft YaHei">
 							开发者
-						</h1>
+						</h1></center>
+					</br>
+					</br>
+					</br>
+						<center>
+						<p style="font-family:Microsoft YaHei">
+							以开发者的身份登陆，你将在这里查看正在招标的项目，与其他人组成团队以完成项目！
+						</p></center>
+						</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center>
 						<p>
-							This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-						</p>
-						<p>
-							 <a class="btn btn-primary btn-large" href="LoginDev.action">登录为开发者</a>
-						</p>
+							 <a style="font-family:Microsoft YaHei" class="btn btn-primary btn-large" href="LoginDev.action">登录为开发者</a>
+						</p><center>
 					</div>
 				</div>
 				<div class="col-md-6 column">
 					<div class="jumbotron well">
-						<h1>
+						</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center><h1 style="font-family:Microsoft YaHei">
 							需求商
-						</h1>
+						</h1></center>
+					</br>
+					</br>
+					</br>
+						<center>
+						<p style="font-family:Microsoft YaHei">
+							以需求商的身份登陆，发布你的需求，等待或征召有能力的开发者！
+						</p></center>
+						</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center>
 						<p>
-							This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-						</p>
-						<p>
-							 <a class="btn btn-primary btn-large" href="LoginNeed.action">登录为需求商</a>
-						</p>
+							 <a style="font-family:Microsoft YaHei" class="btn btn-primary btn-large" href="LoginNeed.action">登录为需求商</a>
+						</p><center>
 					</div>
 				</div>
 			</div>

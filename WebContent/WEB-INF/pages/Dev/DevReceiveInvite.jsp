@@ -86,7 +86,7 @@
 			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标<span class="badge"></span></a></li>
 			<li><a href="devAccountPre.action?inputAccount=${inputAccount}">账户管理</a></li>
 			<li class="active"><a href="devReceiveInvite.action?inputAccount=${inputAccount}">项目邀请<span class="badge">${list.size()}</span></a></li>
-			<li><a href="devExPre.action?inputAccount=${inputAccount}">管理资料</a></li>
+			<li><a href="devExPre.action?inputAccount=${inputAccount}">资料管理</a></li>
 			<li><a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a></li>
 			</ul>
 		</div>

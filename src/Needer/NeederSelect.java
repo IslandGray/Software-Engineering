@@ -62,14 +62,18 @@ public class NeederSelect {
 					    	  String devsex = rs.getString("Sex");
 					    	  String devaccount = rs.getString("Account");
 					    	  
-					    	  //String devlanguage = rs.getString("Language");
-					    	  //String devplatform = rs.getString("Platform");
-					    	  //String devexperience = rs.getString("Experience");
-					    	  //String devprice = rs.getString("Price");
-					    	  
-					    	  Developer dev=new Developer(devname, devgraduate, devsex, devaccount, null, null, null, null);
-					    	  list.add(dev);
+					    	  Statement stmt2 = connect.createStatement();
+					    	  ResultSet rs2 = stmt2.executeQuery("select * from dev_data where account='"+devaccount+"'");
+					    	  if(rs2.next()){
+					    		  String devlanguage = rs2.getString("language");
+						    	  String devplatform = rs2.getString("platform");
+						    	  String devexperience = rs2.getString("experience");
+						    	  
+						    	  Developer dev=new Developer(devname, devgraduate, devsex, devaccount, devlanguage, devplatform, devexperience, null);
+						    	  list.add(dev);
+						      }
 					      }
+					    	  
 			    	  }
 		    	  }catch(Exception e){
 		    		  System.out.println("Only one tender");

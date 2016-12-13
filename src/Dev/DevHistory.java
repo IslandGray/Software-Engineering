@@ -29,20 +29,26 @@ public class DevHistory {
 		          "jdbc:mysql://localhost:3306/JOB","root","wcp19970221");
 		      System.out.println("Success connect Mysql server!");
 		      Statement stmt = connect.createStatement();
-		      ResultSet rs = stmt.executeQuery("select * from History where Developer='"+inputAccount+"'");
+		      ResultSet rs = stmt.executeQuery("select * from History");
 		      while(rs.next()){
-		    	  
-		    	  try{
-		    		  
-			    	  String status = rs.getString("Status");
-			    	  String project = rs.getString("Project");
-			    	  History pro=new History(inputAccount,project,status);
-			    	  list.add(pro);
-			    	  
-			    	  
-		    	  }catch(Exception e){
-		    		  return "SUCCESS";
+		    	  String devtemp=rs.getString("Developer");
+		    	  String dev[]=devtemp.split("&");
+		    	  for(String i:dev){
+		    		  if(inputAccount.equals(i)){
+		    			  try{
+				    		  
+					    	  String status = rs.getString("Status");
+					    	  String project = rs.getString("Project");
+					    	  History pro=new History(devtemp,project,status);
+					    	  list.add(pro);
+					    	  break;
+					    	  
+				    	  }catch(Exception e){
+				    		  return "SUCCESS";
+				    	  }
+		    		  }
 		    	  }
+		    	  
 		      }
 		} 
 		catch (Exception e) {

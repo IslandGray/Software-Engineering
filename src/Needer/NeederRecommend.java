@@ -55,6 +55,8 @@ public class NeederRecommend {
 		    		  language=rp.getString("Language");
 				      platform=rp.getString("Platform");
 				      experience=rp.getString("Experience");
+				     // String workerTemp=rp.getString("Worker");
+				      //String[] Worker=workerTemp.split("&");
 		    	  }
 		    	  while(rs.next()){
 			    	  String devname = rs.getString("Name");
@@ -62,6 +64,7 @@ public class NeederRecommend {
 			    	  String devsex = rs.getString("Sex");
 			    	  String devaccount = rs.getString("Account");
 			    	  System.out.println(devaccount);
+			    	  //for(int i=1;i<=Worker.)
 			    	  ResultSet rx = stmt1.executeQuery("select * from dev_data where account='"+devaccount+"'");
 			    	  try{
 			    		  if(rx.next()){
