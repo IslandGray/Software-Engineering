@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,9 +45,7 @@
 						</div> <button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li>
-							 <a href="#">Link</a>
-						</li>
+						
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputAccount}<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
@@ -81,71 +80,33 @@
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
 			<li><a href="#">系统推荐</a></li>
-			<li class="active"><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
-			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标<span class="badge"></span></a></li>
+			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
+			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a></li>
 			<li><a href="devAccountPre.action?inputAccount=${inputAccount}">账户管理</a></li>
-			<li><a href="devExPre.action?inputAccount=${inputAccount}">管理资料</a></li>
-			<li><a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a></li>
+			<li><a href="devExPre.action?inputAccount=${inputAccount}">资料管理</a></li>
+			<li class="active"><a href="devHistory.action?inputAccount=${inputAccount}">工作记录<span class="badge">${list.size()}</span></a></li>
 			</ul>
 		</div>
 		<div class="col-md-9 column">
-			<form class="form-horizontal" action="devEditSave.action?inputAccount=${inputAccount}&inputName=${inputName}&inputID=${inputID}" method="post" enctype="multipart/form-data">
-					  <fieldset>
-					    <legend>注册信息</legend>
-					    <div class="form-group">
-					      <label for="inputName" class="col-lg-2 control-label">真实姓名</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputName" placeholder="${inputName}" disabled="">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputID" class="col-lg-2 control-label">身份证号</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputID" placeholder="${inputID}" disabled="">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputGraduate" class="col-lg-2 control-label">学历</label>
-					      <div class="col-lg-10">
-					        <select class="form-control" name="inputGraduate">
-					          <option>请选择...</option>
-					          <option>小学</option>
-					          <option>初中</option>
-					          <option>高中</option>
-					          <option>大学专科</option>
-					          <option>大学本科</option>
-					          <option>硕士</option>
-					          <option>博士</option>
-					        </select>
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputS" class="col-lg-2 control-label">性别</label>
-					      <div class="col-lg-10">
-					        <div class="radio">
-					          <label>
-					            <input type="radio" name="inputSex" id="inputSex" value="男" checked="">
-					            男
-					          </label>
-					        </div>
-					        <div class="radio">
-					          <label>
-					            <input type="radio" name="inputSex" id="inputSex" value="女">
-					            女
-					          </label>
-					        </div>
-					      </div>
-					    </div>
-					    
-					    <div class="form-group">
-					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-default">Reset</button>
-					        <button type="submit" class="btn btn-primary">Submit</button>
-					      </div>
-					    </div>
-					    
-					  </fieldset>
-					</form>
+			<table class="table table-striped table-hover ">
+			  <thead>
+			    <tr>
+			          <th>开发者</th>
+				      <th>项目号</th>
+				      <th>状态</th>
+			       
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <s:iterator value="list" id="pro"> 
+			    	<tr>
+				    	<td>${pro.developer}</td>
+						<td><a href="#">${pro.project}</a></td>
+						<td>${pro.status}</td>
+					</tr>
+				</s:iterator>
+			  </tbody>
+			</table>
 		</div>
 	</div>
 </div>

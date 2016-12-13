@@ -101,6 +101,9 @@
 	    <action name="devJobFinish" class="Dev.DevJobFinish" method="finish">
 	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevJobFinish.jsp</result>
 	    </action>
+	    <action name="devHistory" class="Dev.DevHistory" method="history">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevHistory.jsp</result>
+	    </action>
     </package>
     <package name="NEEDER" extends="struts-default">
         <action name="gotoNeederHomepage" class="Needer.NeederIndex" method="IndexTrans">
