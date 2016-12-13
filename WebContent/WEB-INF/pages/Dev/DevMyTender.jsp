@@ -110,7 +110,7 @@
 			    <s:iterator value="list" id="pro"> 
 			    	<tr>
 				    	<td>${pro.id}</td>
-						<td><a href="#">${pro.name}</a></td>
+						<td>${pro.name}</a></td>
 						<td><a href="findNeeder.action?inputCompany=${pro.needer}">${pro.needer}</a></td>
 						<td>${pro.language}</td>
 						<td>${pro.platform}</td>

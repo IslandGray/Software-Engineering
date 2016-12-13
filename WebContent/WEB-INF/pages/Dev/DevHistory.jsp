@@ -102,7 +102,7 @@
 			    <s:iterator value="list" id="pro"> 
 			    	<tr>
 				    	<td>${pro.developer}</td>
-						<td><a href="#">${pro.project}</a></td>
+						<td>${pro.project}</a></td>
 						<td>${pro.status}</td>
 					</tr>
 				</s:iterator>

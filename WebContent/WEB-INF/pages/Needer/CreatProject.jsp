@@ -168,32 +168,41 @@
 				<div class="col-md-4 column">
 					<dl>
 						<dt>
-							Description lists
+							项目发布
 						</dt>
 						<dd>
-							A description list is perfect for defining terms.
+							创建一个属于你的新项目.
+						</dd>
+						<dd>
+						·	<br>
 						</dd>
 						<dt>
-							Euismod
+							招揽群雄
 						</dt>
 						<dd>
-							Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+							你可以任意设定需要的人数，
 						</dd>
 						<dd>
-							Donec id elit non mi porta gravida at eget metus.
+							并由此形成你的团队.
+						</dd>
+						<dd>
+							<br>
 						</dd>
 						<dt>
-							Malesuada porta
+							自动推荐
 						</dt>
 						<dd>
-							Etiam porta sem malesuada magna mollis euismod.
+							项目建立后，系统会根据项目的属性来为你筛选出最适合這这项工作的人
+						</dd>
+						<dd>
+							你可以向他们发出诚挚的邀请
+						</dd>
+						<dd>
+							<br>
 						</dd>
 						<dt>
-							Felis euismod semper eget lacinia
+							你可以随时回来查看你的进度
 						</dt>
-						<dd>
-							Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-						</dd>
 					</dl>
 				</div>
 			</div>

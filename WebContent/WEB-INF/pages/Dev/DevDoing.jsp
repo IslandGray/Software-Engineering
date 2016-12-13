@@ -95,7 +95,7 @@
 			  <tbody>
 			    <tr>
 			    	<td>${id}</td>
-			      	<td><a href="#">${name}</a></td>
+			      	<td>${name}</a></td>
 			      	<td><a href="findNeeder.action?inputCompany=${company}">${company}</a></td>
 			      	<td>${language}</td>
 			      	<td>${platform}</td>

@@ -97,7 +97,7 @@
 					<s:iterator value="list" id="pro"> 
 						<tr>
 							<td>${pro.id}</td>
-							<td><a href="#">${pro.name}</a></td>
+							<td>${pro.name}</a></td>
 							<td><a href="findNeeder.action?inputCompany=${pro.needer}">${pro.needer}</a></td>
 							<td>${pro.language}</td>
 							<td>${pro.platform}</td>
@@ -125,27 +125,7 @@
 					 <a href="#">Next</a>
 				</li>
 			</ul>
-			
-		<a id="modal-948797" href="#modal-container-948797" role="button" class="btn" data-toggle="modal">触发遮罩窗体</a>
-			<div class="modal fade" id="modal-container-948797" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-							<h4 class="modal-title" id="myModalLabel">
-								标题
-							</h4>
-						</div>
-						<div class="modal-body">
-							内容...
-						</div>
-						<div class="modal-footer">
-							 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> 
-							 <button type="button" class="btn btn-primary">保存</button>
-						</div>
-					</div>
-				</div>
-			</div>
+		
 		</div>
 	</div>
 </div>
