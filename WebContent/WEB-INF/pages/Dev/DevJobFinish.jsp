@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>正在进行的项目</title>
+	<title>需求市场</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -13,6 +14,7 @@
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
 </head>
 <body>
+
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -67,50 +69,33 @@
 					</ul>
 				</div>
 			</nav>
-			<div class="page-header">
-				<h1>
-					当前工作 <small>Current Project</small>
-				</h1>
-			</div> 
+		<div class="page-header">
+			<h1>
+				当前工作 <small>Current Project</small>
+			</h1>
+		</div>
+		
+		<div class="row clearfix">
+				<div class="col-lg-10 col-lg-offset-1">
+					<div class="jumbotron well">
+						<h1>
+							工作已完成！
+						</h1>
+						<p>
+							你已经成功完成了一项繁重的作业，好好休息一下吧，点击返回
+						</p>
+						<p>
+							 <a class="btn btn-primary btn-large" href="returnDevDoing.action?inputAccount=${inputAccount}">返回</a>
+						</p>
+					</div>
+				</div>
+			</div>
+				
 		</div>
 	</div>
-	
-	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1">
-			<div class="well bs-component"> 
-			<table class="table table-striped table-hover ">
-			  <thead>
-			    <tr>
-			      <th>任务ID</th>
-			      <th>项目名</th>
-			      <th>委托方</th>
-			      <th>编程语言</th>
-			      <th>平台</th>
-			      <th>工期</th>
-			      <th>报酬</th>
-			      <th>人数</th>
-			      <th>状态</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			    	<td>${id}</td>
-			      	<td><a href="#">${name}</a></td>
-			      	<td><a href="#">${company}</a></td>
-			      	<td>${language}</td>
-			      	<td>${platform}</td>
-			      	<td>${time}</td>
-			      	<td>${Price}</td>
-			      	<td>${num}</td>
-			      	<td>${status}</td>
-			      	<td><a href="devJobFinish.action?inputAccount=${inputAccount}&inputProjectID=${id}">提交工作</a></td>
-			    </tr>
-			    </tbody>
-			</table> 
-	</div></div></div>
 </div>
-	
-	
+
+
 	<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
     <!-- 可选: 包含 jQuery 库 -->
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>

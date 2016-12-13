@@ -107,8 +107,8 @@
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a></li>
-				<li><a href="#">账号信息</a></li>
-				<li><a href="#">历史项目</a></li>
+				<li><a href="neederAccountPre.action?inputEmail=${inputEmail}">账号信息</a></li>
+				<li><a href="neederHistory.action?inputEmail=${inputEmail}">历史项目</a></li>
 			</ul>
 		</div>
 		<div class="col-md-4 column">

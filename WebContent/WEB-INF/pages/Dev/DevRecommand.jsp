@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>正在进行的项目</title>
+	<title>开发者主页</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -27,13 +28,13 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li>
+						<li class="active">
 							 <a href="returnDevIndex.action?inputAccount=${inputAccount}">个人主页</a>
 						</li>
 						<li>
 							 <a href="devtoMarket.action?inputAccount=${inputAccount}">需求市场</a>
 						</li>
-						<li class="active">
+						<li>
 							 <a href="returnDevDoing.action?inputAccount=${inputAccount}">当前工作</a>
 						</li>
 						
@@ -69,45 +70,67 @@
 			</nav>
 			<div class="page-header">
 				<h1>
-					当前工作 <small>Current Project</small>
+					个人主页 <small>Index</small>
 				</h1>
 			</div> 
 		</div>
 	</div>
 	
-	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1">
-			<div class="well bs-component"> 
-			<table class="table table-striped table-hover ">
-			  <thead>
-			    <tr>
-			      <th>任务ID</th>
-			      <th>项目名</th>
-			      <th>委托方</th>
-			      <th>编程语言</th>
-			      <th>平台</th>
-			      <th>工期</th>
-			      <th>报酬</th>
-			      <th>人数</th>
-			      <th>状态</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			    	<td>${id}</td>
-			      	<td><a href="#">${name}</a></td>
-			      	<td><a href="#">${company}</a></td>
-			      	<td>${language}</td>
-			      	<td>${platform}</td>
-			      	<td>${time}</td>
-			      	<td>${Price}</td>
-			      	<td>${num}</td>
-			      	<td>${status}</td>
-			      	<td><a href="devJobFinish.action?inputAccount=${inputAccount}&inputProjectID=${id}">提交工作</a></td>
-			    </tr>
-			    </tbody>
-			</table> 
-	</div></div></div>
+	<div class="row clearfix">
+		<div class="col-md-3 column">
+			<ul class="nav nav-pills nav-stacked">
+			<li class="active"><a href="devRecommand.action?inputAccount=${inputAccount}">系统推荐</a></li>
+			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
+			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标<span class="badge"></span></a></li>
+			<li><a href="devAccountPre.action?inputAccount=${inputAccount}">账户管理</a></li>
+			<li><a href="devExPre.action?inputAccount=${inputAccount}">资料管理</a></li>
+			<li><a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9 column">
+			<div class="well bs-component">
+			<tr>
+			    	<td>为您找到了符合“${platform}”上的 或“${language}”语言的${list.size()}条推荐项目：</td>
+
+			</tr>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+					  <th>任务ID</th>
+				      <th>项目名</th>
+				      <th>委托方</th>
+				      <th>编程语言</th>
+				      <th>平台</th>
+				      <th>学历要求</th>
+				      <th>经验要求</th>
+				      <th>工期</th>
+				      <th>报酬</th>
+				      <th>人数</th>
+				      <th>状态</th>
+					</tr>
+				</thead>
+				<tbody>
+					<s:iterator value="list" id="pro"> 
+						<tr>
+							<td>${pro.id}</td>
+							<td><a href="#">${pro.name}</a></td>
+							<td><a href="#">${pro.needer}</a></td>
+							<td>${pro.language}</td>
+							<td>${pro.platform}</td>
+							<td>${pro.education}</td>
+							<td>${pro.experience}</td>
+							<td>${pro.time}</td>
+							<td>${pro.price}</td>
+							<td>${pro.num}</td>
+							<td>${pro.status}</td>
+							<td><a href="devTender.action?itemID=${pro.id}&inputAccount=${inputAccount}" >投标</a></td>
+						</tr>
+					</s:iterator> 
+				</tbody>
+			</table>
+		</div>
+		</div>
+	</div>
 </div>
 	
 	

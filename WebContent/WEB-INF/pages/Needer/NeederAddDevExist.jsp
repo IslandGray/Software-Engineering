@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>需求商企业主页</title>
+	<title>招标选择</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -13,6 +14,7 @@
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
 </head>
 <body>
+
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -27,17 +29,17 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active">
+						<li>
 							 <a href="neederEditPre.action?inputEmail=${inputEmail}">企业主页</a>
 						</li>
 						<li>
 							 <a href="creatProject.action?inputEmail=${inputEmail}">发布项目</a>
 						</li>
-						<li>
+						<li class="active">
 							 <a href="neederTendering.action?inputEmail=${inputEmail}">正在招标</a>
 						</li>
 						<li>
-							 <a href="neederDoing.action?inputEmail=${inputEmail}#">正在进行</a>
+							 <a href="neederDoing.action?inputEmail=${inputEmail}">正在进行</a>
 						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
@@ -95,77 +97,33 @@
 					</ul>
 				</div>
 			</nav>
-			<div class="page-header">
-				<h1>
-					企业主页 <small>Index</small>
-				</h1>
-			</div> 
+		<div class="page-header">
+			<h1>
+				招标选择 <small>Selecting</small>
+			</h1>
 		</div>
-	</div>
-	
-	<div class="row clearfix">
-		<div class="col-md-3 column">
-			<ul class="nav nav-pills nav-stacked">
-				<li class="active"><a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a></li>
-				<li><a href="neederAccountPre.action?inputEmail=${inputEmail}">账号信息</a></li>
-				<li><a href="neederHistory.action?inputEmail=${inputEmail}">历史项目</a></li>
-			</ul>
-		</div>
-		<div class="col-md-9 column">
-			<form class="form-horizontal" action="neederEditSave.action?inputEmail=${inputEmail}&inputCompany=${inputCompany}" method="post" enctype="multipart/form-data">
-					  <fieldset>
-					    <legend>注册信息</legend>
-					    <div class="form-group">
-					      <label for="inputEmail" class="col-lg-2 control-label">注册账号</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputEmail" value="${inputEmail}" disabled="">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputCompany" class="col-lg-2 control-label">企业名</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputCompany" value="${inputCompany}" disabled="">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputAccount" class="col-lg-2 control-label">用户名</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAccount" value="${inputAccount}" disabled="">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputLocation" class="col-lg-2 control-label">所在地</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputLocation" value="${inputLocation}">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputAttention" class="col-lg-2 control-label">联系人</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAttention" value="${inputAttention}">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputNumber" class="col-lg-2 control-label">联系电话</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputNumber" value="${inputNumber}">
-					      </div>
-					    </div>
-					    
-					    <div class="form-group">
-					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-danger">清空</button>
-					        <button type="submit" class="btn btn-primary">提交</button>
-					      </div>
-					    </div>
-					    
-					  </fieldset>
-					</form>
+		
+		<div class="row clearfix">
+				<div class="col-lg-10 col-lg-offset-1">
+					<div class="jumbotron well">
+						<h1>
+							无法对其进行招标
+						</h1>
+						<p>
+						该开发者当前已经存在一个进行中的工作，点击返回
+						</p>
+						<p>
+							 <a class="btn btn-primary btn-large" href="#" onclick="history.back()">返回</a>
+						</p>
+					</div>
+				</div>
+			</div>
+				
 		</div>
 	</div>
 </div>
-	
-	
+
+
 	<!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
     <!-- 可选: 包含 jQuery 库 -->
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>

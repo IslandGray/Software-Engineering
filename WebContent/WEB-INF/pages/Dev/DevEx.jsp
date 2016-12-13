@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>需求商企业主页</title>
+	<title>开发者主页</title>
 	<!-- 包含头部信息用于适应不同设备 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
@@ -28,41 +28,15 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active">
-							 <a href="neederEditPre.action?inputEmail=${inputEmail}">企业主页</a>
+							 <a href="returnDevIndex.action?inputAccount=${inputAccount}">个人主页</a>
 						</li>
 						<li>
-							 <a href="creatProject.action?inputEmail=${inputEmail}">发布项目</a>
+							 <a href="devtoMarket.action?inputAccount=${inputAccount}">需求市场</a>
 						</li>
 						<li>
-							 <a href="neederTendering.action?inputEmail=${inputEmail}">正在招标</a>
+							 <a href="returnDevDoing.action?inputAccount=${inputAccount}">当前工作</a>
 						</li>
-						<li>
-							 <a href="neederDoing.action?inputEmail=${inputEmail}#">正在进行</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									 <a href="#">Action</a>
-								</li>
-								<li>
-									 <a href="#">Another action</a>
-								</li>
-								<li>
-									 <a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">Separated link</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									 <a href="#">One more separated link</a>
-								</li>
-							</ul>
-						</li>
+						
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
@@ -74,10 +48,10 @@
 							 <a href="#">Link</a>
 						</li>
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputEmail}<strong class="caret"></strong></a>
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">${inputAccount}<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
-									 <a href="#">个人主页</a>
+									 <a href="devMyTender.action?inputAccount=${inputAccount}">我的投标</a>
 								</li>
 								<li>
 									 <a href="#">Another action</a>
@@ -97,7 +71,7 @@
 			</nav>
 			<div class="page-header">
 				<h1>
-					企业主页 <small>Index</small>
+					个人主页 <small>Index</small>
 				</h1>
 			</div> 
 		</div>
@@ -106,56 +80,49 @@
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
-				<li class="active"><a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a></li>
-				<li><a href="neederAccountPre.action?inputEmail=${inputEmail}">账号信息</a></li>
-				<li><a href="neederHistory.action?inputEmail=${inputEmail}">历史项目</a></li>
+			<li><a href="devRecommand.action?inputAccount=${inputAccount}">系统推荐</a></li>
+			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
+			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标<span class="badge"></span></a></li>
+			<li><a href="devAccountPre.action?inputAccount=${inputAccount}">账户管理</a></li>
+			<li class="active"><a href="devExPre.action?inputAccount=${inputAccount}">管理资料</a></li>
+			<li><a href="devHistory.action?inputAccount=${inputAccount}">工作记录</a></li>
 			</ul>
 		</div>
 		<div class="col-md-9 column">
-			<form class="form-horizontal" action="neederEditSave.action?inputEmail=${inputEmail}&inputCompany=${inputCompany}" method="post" enctype="multipart/form-data">
+			<form class="form-horizontal" action="devExSave.action?inputAccount=${inputAccount}" method="post" enctype="multipart/form-data">
 					  <fieldset>
-					    <legend>注册信息</legend>
+					    <legend>完善资料</legend>
 					    <div class="form-group">
-					      <label for="inputEmail" class="col-lg-2 control-label">注册账号</label>
+					      <label for="inputName" class="col-lg-2 control-label">擅长语言</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputEmail" value="${inputEmail}" disabled="">
+					        <input type="text" class="form-control" name="inputLanguage" value="${inputLanguage}">
 					      </div>
 					    </div>
 					    <div class="form-group">
-					      <label for="inputCompany" class="col-lg-2 control-label">企业名</label>
+					      <label for="inputPlatform" class="col-lg-2 control-label">开发平台</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputCompany" value="${inputCompany}" disabled="">
+					        <select class="form-control" name="inputPlatform">
+					          <option>Windows</option>
+					          <option>Android</option>
+					          <option>iOS</option>
+					          <option>Web</option>
+					          <option>Linux</option>
+					          <option>Other</option>
+					        </select>
 					      </div>
 					    </div>
+					    
 					    <div class="form-group">
-					      <label for="inputAccount" class="col-lg-2 control-label">用户名</label>
+					      <label for="inputID" class="col-lg-2 control-label">开发经验</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAccount" value="${inputAccount}" disabled="">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputLocation" class="col-lg-2 control-label">所在地</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputLocation" value="${inputLocation}">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputAttention" class="col-lg-2 control-label">联系人</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAttention" value="${inputAttention}">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputNumber" class="col-lg-2 control-label">联系电话</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputNumber" value="${inputNumber}">
+					        <input type="text" class="form-control" name="inputExperience" value="${inputExperience}">
 					      </div>
 					    </div>
 					    
 					    <div class="form-group">
 					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-danger">清空</button>
-					        <button type="submit" class="btn btn-primary">提交</button>
+					        <button type="reset" class="btn btn-default">Reset</button>
+					        <button type="submit" class="btn btn-primary">Submit</button>
 					      </div>
 					    </div>
 					    

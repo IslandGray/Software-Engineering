@@ -119,6 +119,7 @@
 				      <th>工期</th>
 				      <th>报酬</th>
 				      <th>人数</th>
+				      <th>状态</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -133,7 +134,8 @@
 						<td>${pro.time}</td>
 						<td>${pro.price}</td>
 						<td>${pro.num}</td>
-						<td><a href="#?inputEmail=${inputEmail}&projectID=${pro.id}&name=${pro.name}&platform=${pro.platform}&education=${pro.education}&price=${pro.price}&experience=${pro.experience}&time=${pro.time}&num=${pro.num}&tendernum=${tenderNum}&language=${pro.language}">确认结束</a></td>
+						<td>${pro.status}</td>
+						<td><a href="neederJobFinish.action?&projectID=${pro.id}">确认结束</a></td>
 					</tr>
 				</s:iterator>
 			   </tbody>

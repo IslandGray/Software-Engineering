@@ -119,7 +119,7 @@
 				      <th>工期</th>
 				      <th>报酬</th>
 				      <th>需要人数</th>
-				      <th>已投标人数</th>
+				      <th>已招标人数</th>
 			    </tr>
 			  </thead>
 			  <tbody>

@@ -7,6 +7,10 @@ public class DevIndex {
 	private String inputSex;
 	private String inputGraduate;
 	
+	private String inputLanguage;
+	private String inputPlatform;
+	private String inputExperience;
+	
 	public String login(){
 		return "SUCCESS";
 	}
@@ -49,6 +53,30 @@ public class DevIndex {
 
 	public void setInputGraduate(String inputGraduate) {
 		this.inputGraduate = inputGraduate;
+	}
+
+	public String getInputLanguage() {
+		return inputLanguage;
+	}
+
+	public void setInputLanguage(String inputLanguage) {
+		this.inputLanguage = inputLanguage;
+	}
+
+	public String getInputPlatform() {
+		return inputPlatform;
+	}
+
+	public void setInputPlatform(String inputPlatform) {
+		this.inputPlatform = inputPlatform;
+	}
+
+	public String getInputExperience() {
+		return inputExperience;
+	}
+
+	public void setInputExperience(String inputExperience) {
+		this.inputExperience = inputExperience;
 	}
 	
 	
