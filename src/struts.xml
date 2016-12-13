@@ -104,6 +104,9 @@
 	    <action name="devHistory" class="Dev.DevHistory" method="history">
 	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevHistory.jsp</result>
 	    </action>
+	    <action name="devRecommand" class="Dev.DevRecommand" method="recommand">
+	      	<result name="SUCCESS">/WEB-INF/pages/Dev/DevRecommand.jsp</result>
+	    </action>
     </package>
     <package name="NEEDER" extends="struts-default">
         <action name="gotoNeederHomepage" class="Needer.NeederIndex" method="IndexTrans">
@@ -137,8 +140,21 @@
 	    <action name="creatProjectSave" class="Needer.CreatProject" method="creat">
 	      	<result name="SUCCESS" type="chain">neederTendering</result>
 	    </action>
+	    <action name="neederRec" class="Needer.NeederRecommend" method="recommend">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederRecommend.jsp</result>
+		</action>
 	    <action name="neederJobFinish" class="Needer.NeederJobFinish" method="finish">
 	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederJobFinish.jsp</result>
+	    </action>
+	    <action name="neederAccountPre" class="Needer.NeederAccountPre" method="pre">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederAccountPre.jsp</result>
+	    </action>
+	    <action name="neederAccount" class="Needer.NeederAccount" method="edit">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederAccount.jsp</result>
+	      	<result name="FAILURE" type="chain">neederAccountPre</result>
+	    </action>
+	    <action name="neederHistory" class="Needer.NeederHistory" method="history">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederHistory.jsp</result>
 	    </action>
     </package>
 </struts>

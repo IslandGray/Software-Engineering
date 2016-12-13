@@ -78,7 +78,7 @@
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
-			<li class="active"><a href="#">系统推荐</a></li>
+			<li><a href="devRecommand.action?inputAccount=${inputAccount}">系统推荐</a></li>
 			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
 			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标<span class="badge"></span></a></li>
 			<li><a href="devAccountPre.action?inputAccount=${inputAccount}">账户管理</a></li>
@@ -90,13 +90,13 @@
 			<table class="table table-striped table-hover ">
 			  <thead>
 			    <tr>
-			      <th>系统推荐项目</th>
+			      <th>Welcome!</th>
 			       
 			    </tr>
 			  </thead>
 			  <tbody>
 			    <tr>
-			    	<td>#</td>
+			    	<td>欢迎回来，${inputAccount}</td>
 
 			    </tr>
 			    </tbody>

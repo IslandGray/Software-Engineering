@@ -78,7 +78,7 @@
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
-			<li><a href="#">系统推荐</a></li>
+			<li><a href="devRecommand.action?inputAccount=${inputAccount}">系统推荐</a></li>
 			<li><a href="devEditPre.action?inputAccount=${inputAccount}">个人资料</a></li>
 			<li><a href="devMyTender.action?inputAccount=${inputAccount}">我的投标<span class="badge"></span></a></li>
 			<li><a href="devAccountPre.action?inputAccount=${inputAccount}">账户管理</a></li>
@@ -97,7 +97,7 @@
 				<thead><tr><th>经验</th></tr></thead>
 				<tbody><tr><td>${inputExperience}</td>
 			</table>
-			<a href="devEx.action?inputAccount=${inputAccount}&inputLanguage=${inputLanguage}&inputPlatform=${inputPlatform}&inputGraduate=${inputExperience}&inputSex=${inputExperience}" class="btn btn-info btn-lg btn-block">修改信息</a>
+			<a href="devEx.action?inputAccount=${inputAccount}&inputLanguage=${inputLanguage}&inputPlatform=${inputPlatform}&inputExperience=${inputExperience}" class="btn btn-info btn-lg btn-block">修改信息</a>
 			
 		</div>
 	</div>

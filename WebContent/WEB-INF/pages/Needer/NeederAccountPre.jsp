@@ -106,59 +106,40 @@
 	<div class="row clearfix">
 		<div class="col-md-3 column">
 			<ul class="nav nav-pills nav-stacked">
-				<li class="active"><a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a></li>
-				<li><a href="neederAccountPre.action?inputEmail=${inputEmail}">账号信息</a></li>
+				<li><a href="neederEditPre.action?inputEmail=${inputEmail}">企业资料</a></li>
+				<li class="active"><a href="neederAccountPre.action?inputEmail=${inputEmail}">账号信息</a></li>
 				<li><a href="neederHistory.action?inputEmail=${inputEmail}">历史项目</a></li>
 			</ul>
 		</div>
 		<div class="col-md-9 column">
-			<form class="form-horizontal" action="neederEditSave.action?inputEmail=${inputEmail}&inputCompany=${inputCompany}" method="post" enctype="multipart/form-data">
+			<form class="form-horizontal" action="neederAccount.action?inputEmail=${inputEmail}" method="post" enctype="multipart/form-data">
 					  <fieldset>
-					    <legend>注册信息</legend>
+					    <legend>修改密码</legend>
 					    <div class="form-group">
-					      <label for="inputEmail" class="col-lg-2 control-label">注册账号</label>
+					      <label for="input" class="col-lg-2 control-label">原密码</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputEmail" value="${inputEmail}" disabled="">
+					        <input type="password" class="form-control" name="inputOldPassword">
 					      </div>
 					    </div>
 					    <div class="form-group">
-					      <label for="inputCompany" class="col-lg-2 control-label">企业名</label>
+					      <label for="input" class="col-lg-2 control-label">新密码</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputCompany" value="${inputCompany}" disabled="">
+					        <input type="password" class="form-control" name="inputNewPassword">
 					      </div>
 					    </div>
 					    <div class="form-group">
-					      <label for="inputAccount" class="col-lg-2 control-label">用户名</label>
+					      <label for="input" class="col-lg-2 control-label">确认新密码</label>
 					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAccount" value="${inputAccount}" disabled="">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputLocation" class="col-lg-2 control-label">所在地</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputLocation" value="${inputLocation}">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputAttention" class="col-lg-2 control-label">联系人</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputAttention" value="${inputAttention}">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <label for="inputNumber" class="col-lg-2 control-label">联系电话</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" name="inputNumber" value="${inputNumber}">
+					        <input type="password" class="form-control" name="inputNew2">
 					      </div>
 					    </div>
 					    
 					    <div class="form-group">
 					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="reset" class="btn btn-danger">清空</button>
-					        <button type="submit" class="btn btn-primary">提交</button>
+					        <button type="reset" class="btn btn-default">Reset</button>
+					        <button type="submit" class="btn btn-primary">Submit</button>
 					      </div>
-					    </div>
-					    
+					    </div>					    
 					  </fieldset>
 					</form>
 		</div>

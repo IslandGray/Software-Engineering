@@ -17,9 +17,10 @@ public class Project2 {
 	private String status;
 	private String[] worker;
 	private String[] waiter;
+	private int tenderNum;
 	
 	public Project2(String name,String summary,int num,String education,String language,String platform,String experience,
-			String time,String price,String id,String needer,String status,String[] worker,String[] waiter){
+			String time,String price,String id,String needer,String status,String[] worker,String[] waiter,int tenderNum){
 		this.experience=experience;
 		this.id=id;
 		this.language=language;
@@ -34,6 +35,7 @@ public class Project2 {
 		this.status=status;
 		this.worker=worker;
 		this.waiter=waiter;
+		this.tenderNum=tenderNum;
 	}
 
 	public String getName() {
@@ -148,6 +150,12 @@ public class Project2 {
 		this.waiter = waiter;
 	}
 
-	
+	public int getTenderNum() {
+		return tenderNum;
+	}
+
+	public void setTenderNum(int tenderNum) {
+		this.tenderNum = tenderNum;
+	}
 	
 }

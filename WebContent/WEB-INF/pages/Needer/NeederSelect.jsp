@@ -119,7 +119,7 @@
 				      <th>工期</th>
 				      <th>报酬</th>
 				      <th>需要人数</th>
-				      <th>已投标人数</th>
+				      <th>已招标人数</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -129,8 +129,8 @@
 						<td>${language}</td>
 						<td>${platform}</td>
 						<td>${education}</td>
-						<td>${experience}</td>
-						<td>${time}</td>
+						<td>${experience}年</td>
+						<td>${time}天</td>
 						<td>${price}</td>
 						<td>${num}</td>
 						<td>${tendernum}</td>
@@ -147,8 +147,7 @@
 				      <th>学历</th>
 				      <th>擅长语言</th>
 				      <th>擅长平台</th>
-				      <th>经验</th>
-				      <th>期望</th>
+				      <th>开发经验</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -161,7 +160,6 @@
 						<td>${dev.language}</td>
 						<td>${dev.platform}</td>
 						<td>${dev.experience}</td>
-						<td>${dev.price}</td>
 						<td><a href="neederAddDev.action?devAccount=${dev.account}&projectID=${projectID}&inputEmail=${inputEmail}">将其加入项目</a></td>
 					</tr>
 				</s:iterator>
