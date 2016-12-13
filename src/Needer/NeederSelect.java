@@ -45,6 +45,8 @@ public class NeederSelect {
 		      Statement stmt = connect.createStatement();
 		      ResultSet rs = stmt.executeQuery("select * from Project where ID='"+projectID+"'");
 		      if(rs.next()){
+		    	  language=rs.getString("Language");
+			      platform=rs.getString("Platform");
 		    	  String waiterIDtemp=rs.getString("Waiter");
 		    	  if(waiterIDtemp==null){
 		    		  System.out.println("No Tender!");
@@ -178,6 +180,7 @@ public class NeederSelect {
 	public void setPrice(String price) {
 		this.price = price;
 	}
+
 }
 	
 	

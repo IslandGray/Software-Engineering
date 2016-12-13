@@ -119,26 +119,26 @@
 				      <th>工期</th>
 				      <th>报酬</th>
 				      <th>需要人数</th>
-				      <th>已投标人数</th>
+				      <th>已招标人数</th>
 			    </tr>
 			  </thead>
 			  <tbody>
 			    <s:iterator value="list" id="pro"> 
 			    	<tr>
 				    	<td>${pro.id}</td>
-
-						<td>${pro.name}</a></td>
+						<td>${pro.name}</td>
 						<td>${pro.language}</td>
 						<td>${pro.platform}</td>
 						<td>${pro.education}</td>
-						<td>${pro.experience}</td>
-						<td>${pro.time}</td>
+						<td>${pro.experience}年</td>
+						<td>${pro.time}天</td>
 						<td>${pro.price}</td>
 						<td>${pro.num}</td>
-						<td>${tenderNum}</td>
+						<td>${pro.tenderNum}</td>
 
-						<td><a href="neederSelect.action?inputEmail=${inputEmail}&projectID=${pro.id}&name=${pro.name}&platform=${pro.platform}&education=${pro.education}&price=${pro.price}&experience=${pro.experience}&time=${pro.time}&num=${pro.num}&tendernum=${tenderNum}&language=${pro.language}">开始筛选</a></td>
-
+                        <td><a href="neederRec.action?inputEmail=${inputEmail}&projectID=${pro.id}&language=${pro.language}&name=${pro.name}&Needer=${pro.needer}&platform=${pro.platform}&education=${pro.education}&price=${pro.price}&experience=${pro.experience}&time=${pro.time}&num=${pro.num}&tendernum=${pro.tenderNum}">系统推荐</a></td>
+						<td><a href="neederSelect.action?inputEmail=${inputEmail}&projectID=${pro.id}&name=${pro.name}&platform=${pro.platform}&education=${pro.education}&price=${pro.price}&experience=${pro.experience}&time=${pro.time}&num=${pro.num}&tendernum=${pro.tenderNum}&language=${pro.language}">开始筛选</a></td>
+                  
 					</tr>
 				</s:iterator>
 			   </tbody>

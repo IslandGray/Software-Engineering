@@ -57,18 +57,18 @@ public class NeederTendering {
 						    	  String[] waiter = null;
 						    	  try{
 						    		  worker = rs.getString("worker").split("&");
+						    		  tenderNum=worker.length;
 						    	  }catch(Exception e){
 						    		  worker = null;
+						    		  tenderNum=0;
 						    	  }
 						    	  try{
 						    		  waiter = rs.getString("waiter").split("&");
-						    		  tenderNum=waiter.length;
 						    	  }catch(Exception e){
-						    		  waiter = null;
-						    		  tenderNum=0;
+						    		  waiter = null; 
 						    	  }
 						    	  
-						    	  Project2 pro=new Project2(name, "", num, education, language, platform, experience, time, price, id, company, status,worker,waiter);
+						    	  Project2 pro=new Project2(name, "", num, education, language, platform, experience, time, price, id, company, status,worker,waiter,tenderNum);
 						    	  list.add(pro);
 					    	  }
 					      }
@@ -110,6 +110,6 @@ public class NeederTendering {
 	public void setTenderNum(int tenderNum) {
 		this.tenderNum = tenderNum;
 	}
-	
-	
+
+
 }

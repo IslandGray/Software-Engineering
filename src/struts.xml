@@ -120,5 +120,8 @@
 	    <action name="creatProjectSave" class="Needer.CreatProject" method="creat">
 	      	<result name="SUCCESS" type="chain">neederTendering</result>
 	    </action>
+	    <action name="neederRec" class="Needer.NeederRecommend" method="recommend">
+	      	<result name="SUCCESS">/WEB-INF/pages/Needer/NeederRecommend.jsp</result>
+	    </action>
     </package>
 </struts>
