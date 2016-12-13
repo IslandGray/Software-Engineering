@@ -91,29 +91,59 @@
 			</nav>
 			<div class="row clearfix">
 				<div class="col-md-6 column">
-					<div class="jumbotron well">
-						<h1>
+					<div class="jumbotron well" >
+					</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center><h1 style="font-family:Microsoft YaHei">
 							开发者
-						</h1>
+						</h1></center>
+					</br>
+					</br>
+					</br>
+						<center>
+						<p style="font-family:Microsoft YaHei">
+							以开发者的身份登陆，你将在这里查看正在招标的项目，与其他人组成团队以完成项目！
+						</p></center>
+						</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center>
 						<p>
-							This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-						</p>
-						<p>
-							 <a class="btn btn-primary btn-large" href="LoginDev.action">登录为开发者</a>
-						</p>
+							 <a style="font-family:Microsoft YaHei" class="btn btn-primary btn-large" href="LoginDev.action">登录为开发者</a>
+						</p><center>
 					</div>
 				</div>
 				<div class="col-md-6 column">
 					<div class="jumbotron well">
-						<h1>
+						</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center><h1 style="font-family:Microsoft YaHei">
 							需求商
-						</h1>
+						</h1></center>
+					</br>
+					</br>
+					</br>
+						<center>
+						<p style="font-family:Microsoft YaHei">
+							以需求商的身份登陆，发布你的需求，等待或征召有能力的开发者！
+						</p></center>
+						</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center>
 						<p>
-							This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-						</p>
-						<p>
-							 <a class="btn btn-primary btn-large" href="LoginNeed.action">登录为需求商</a>
-						</p>
+							 <a style="font-family:Microsoft YaHei" class="btn btn-primary btn-large" href="LoginNeed.action">登录为需求商</a>
+						</p><center>
 					</div>
 				</div>
 			</div>

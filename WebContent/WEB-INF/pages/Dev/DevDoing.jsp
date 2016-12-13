@@ -103,7 +103,6 @@
 			      	<td>${Price}</td>
 			      	<td>${num}</td>
 			      	<td>${status}</td>
-			      	<td><a href="devJobFinish.action?inputAccount=${inputAccount}&inputProjectID=${id}">提交工作</a></td>
 			    </tr>
 			    </tbody>
 			</table> 

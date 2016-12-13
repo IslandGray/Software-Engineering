@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <!-- 可选的Bootstrap主题文件（一般不用引入） -->
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="but.css">
 </head>
 <body>
 
@@ -93,28 +94,58 @@
 			<div class="row clearfix">
 				<div class="col-md-6 column">
 					<div class="jumbotron well">
-						<h1>
+						</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center><h1 style="font-family:Microsoft YaHei">
 							开发者
-						</h1>
+						</h1></center>
+					</br>
+					</br>
+					</br>
+						<center>
+						<p style="font-family:Microsoft YaHei">
+							成为一名开发者，你将在这里查看正在招标的项目，与其他人组成团队以完成项目！
+						</p></center>
+						</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center>
 						<p>
-							This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-						</p>
-						<p>
-							 <a class="btn btn-primary btn-large" href="RegDev.action">注册为开发者</a>
-						</p>
+							 <a style="font-family:Microsoft YaHei" class="btn btn-primary btn-large" href="RegDev.action">注册为开发者</a>
+						</p><center>
 					</div>
 				</div>
 				<div class="col-md-6 column">
 					<div class="jumbotron well">
-						<h1>
+						</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center><h1 style="font-family:Microsoft YaHei">
 							需求商
-						</h1>
+						</h1></center>
+					</br>
+					</br>
+					</br>
+						<center>
+						<p style="font-family:Microsoft YaHei">
+							成为需求商，你将在这里查看正在招标的项目，与其他人组成团队以完成项目！
+						</p></center>
+						</br>
+					</br>
+					</br>
+					</br>
+					</br>
+						<center>
 						<p>
-							This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-						</p>
-						<p>
-							 <a class="btn btn-primary btn-large" href="RegNeed.action">注册为需求商</a>
-						</p>
+							 <a style="font-family:Microsoft YaHei" class="btn btn-primary btn-large" href="RegNeed.action">注册为需求商</a>
+						</p><center>
 					</div>
 				</div>
 			</div>
