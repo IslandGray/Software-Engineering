@@ -82,12 +82,34 @@ public class DevConfirmRec {
 		    		  System.out.println("finish");
 		    	  }
 		      }
+		      rs = stmt.executeQuery("select * from Developer where Account='"+inputAccount+"'");
+		      if(rs.next()){
+		    	  stmt.executeUpdate("update Developer set Doing='"+projectID+"' where Account='"+inputAccount+"'");
+		      }
+		      rs = stmt.executeQuery("select * from Project where ID='"+projectID+"'");
+	    	  if(rs.next()){
+	    		  int NeedNum=rs.getInt("num");
+	    		  workerTemp=rs.getString("Worker");
+		    	  int currentNum;
+		    	  try{
+		    		  String[] Worker=workerTemp.split("&");
+		    		  currentNum=Worker.length;
+		    	  }catch(Exception e){
+		    		  currentNum=0;
+		    		  e.printStackTrace();
+		    	  }
+		    	  if(currentNum>=NeedNum){
+		    		  stmt.executeUpdate("update Project set Status='正在进行' where ID='"+projectID+"'");
+		    	  }
+		    	  
+	    	  }
 		} 
 		catch (Exception e) {
 		      System.out.println("get data error!");
 		      e.printStackTrace();
 		      return "ERROR";
 		    }
+		
 		return "SUCCESS";
 	}
 

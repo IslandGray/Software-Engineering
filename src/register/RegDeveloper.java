@@ -43,6 +43,8 @@ public class RegDeveloper {
 		      int num=stmt.executeUpdate("insert into Developer values('"+inputName+"','"+inputID+"','"+inputGraduate+"','"+inputSex+"','"+inputAccount+"','"+inputPassword+"',NULL,NULL)");
 		      if(num>=1)	System.out.print("success add "+num+" records in Table-Developer");
 		      else	System.out.print("Add data error!");
+		      
+		      stmt.executeUpdate("insert into dev_data values(NULL,NULL,NULL,'"+inputAccount+"')");
 		} 
 		catch (Exception e) {
 		      System.out.print("get data error!");
