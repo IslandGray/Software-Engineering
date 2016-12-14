@@ -47,7 +47,7 @@ public class CreatProject {
 		    	  Company=rs.getString("Company");
 		    	  project=rs.getString("Project");
 		      }
-		      num=stmt.executeUpdate("insert into project values('"+inputName+"','"+inputSummary+"','"+inputNum+"','"+inputEducation+"','"+inputLanguage+"','"+inputPlatform+"','"+inputExperience+"','"+inputTime+"','"+inputPrice+"','"+ID+"','"+Company+"','招标中',NULL,NULL)");
+		      num=stmt.executeUpdate("insert into Project values('"+inputName+"','"+inputSummary+"','"+inputNum+"','"+inputEducation+"','"+inputLanguage+"','"+inputPlatform+"','"+inputExperience+"','"+inputTime+"','"+inputPrice+"','"+ID+"','"+Company+"','招标中',NULL,NULL)");
 		      
 		      if(project!=null){
 		    	  stmt.executeUpdate("update Needer set Project='"+project+"&"+ID+"' where Email='"+inputEmail+"'");

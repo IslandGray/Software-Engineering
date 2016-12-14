@@ -79,7 +79,7 @@
 						<thead>
 							<tr>
 								  <th>项目ID</th>
-							      <th>项目名</th>
+							      <th>开发者</th>
 							      <th>状态</th>
 							</tr>
 						</thead>
@@ -87,7 +87,7 @@
 							<s:iterator value="list" id="pro"> 
 						    	<tr>
 							    	<td>${pro.project}</td>
-									<td><a href="#">${pro.project}</a></td>
+									<td>${pro.developer}</a></td>
 									<td>${pro.status}</td>
 								</tr>
 							</s:iterator>
