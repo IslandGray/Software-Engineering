@@ -10,6 +10,7 @@ import java.util.List;
 
 import SQL.Developer;
 import SQL.Project2;
+import javafx.concurrent.Worker;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
@@ -30,6 +31,10 @@ public class NeederRecommend {
 	private String language;
 	
 	public String recommend() throws Exception{
+		String workerTemp=null;
+		String[] Worker=null;
+		int i=0,j=0;
+		int length;
 		try {
 		      Class.forName("com.mysql.jdbc.Driver");     //¼ÓÔØMYSQL JDBCÇý¶¯³ÌÐò   
 		     System.out.println("Success loading Mysql Driver!");
@@ -48,42 +53,52 @@ public class NeederRecommend {
 		      Statement stmt2 = connect.createStatement();
 		      Statement stmt3 = connect.createStatement();
 		      ResultSet rs = stmt.executeQuery("select * from Developer ");
-		      System.out.println(language+projectID);
 		      try{
 		    	  ResultSet rp = stmt3.executeQuery("select * from Project where ID='"+projectID+"'");
 		    	  if(rp.next()){
 		    		  language=rp.getString("Language");
 				      platform=rp.getString("Platform");
 				      experience=rp.getString("Experience");
-				     // String workerTemp=rp.getString("Worker");
-				      //String[] Worker=workerTemp.split("&");
+				      workerTemp=rp.getString("Worker");
+				      if(workerTemp!=null)
+				         Worker=workerTemp.split("&");
 		    	  }
+		    	  System.out.println(language+platform+projectID);
 		    	  while(rs.next()){
 			    	  String devname = rs.getString("Name");
 			    	  String devgraduate = rs.getString("Graduate");
 			    	  String devsex = rs.getString("Sex");
 			    	  String devaccount = rs.getString("Account");
-			    	  System.out.println(devaccount);
-			    	  //for(int i=1;i<=Worker.)
-			    	  ResultSet rx = stmt1.executeQuery("select * from dev_data where account='"+devaccount+"'");
-			    	  try{
-			    		  if(rx.next()){
-			    			  String devplatform=rx.getString("platform");
-				    		  String devexperience=rx.getString("experience");
-				    		  String devlanguage=rx.getString("language");
-				    		  System.out.println(devplatform+devlanguage+devexperience);
-				    		  System.out.println(platform+language+experience);
-			    		      if(devplatform.equals(platform)&&devlanguage.equals(language)&&(Integer.valueOf(devexperience)>=Integer.valueOf(experience))){
-			    			     ResultSet rss = stmt2.executeQuery("select * from rec_data where dev_account='"+devaccount+"' and Project_ID='"+projectID+"'");
-			    			     if(!rss.next()){
-			    				   Developer dev=new Developer(devname, devgraduate, devsex, devaccount, devlanguage, devplatform, devexperience, null);
-			    				   list.add(dev);
-			    			     }
-			    		     }
-			    	    }
-			    	  }catch (Exception e) {
-					      continue;
-					    }
+			    	  j=0;
+			    	  if(Worker==null)
+			    		  length=0;
+			    	  else
+			    		  length=Worker.length;
+			    	  for(i=0;i<=length-1;i++){
+			    		  if(devaccount.equals(Worker[i]))
+			    			  break;
+			    		  j++;
+			    	  }
+			    	  System.out.println(j+","+length);
+			    	  if(j==length){
+			    		  ResultSet rx = stmt1.executeQuery("select * from dev_data where account='"+devaccount+"'");
+				    	  try{
+				    		  if(rx.next()){
+				    			  String devplatform=rx.getString("platform");
+					    		  String devexperience=rx.getString("experience");
+					    		  String devlanguage=rx.getString("language");
+				    		      if(devplatform.equals(platform)&&devlanguage.equals(language)&&(Integer.valueOf(devexperience)>=Integer.valueOf(experience))){
+				    			     ResultSet rss = stmt2.executeQuery("select * from rec_data where dev_account='"+devaccount+"' and Project_ID='"+projectID+"'");
+				    			     if(!rss.next()){
+				    				   Developer dev=new Developer(devname, devgraduate, devsex, devaccount, devlanguage, devplatform, devexperience, null);
+				    				   list.add(dev);
+				    			     }
+				    		     }
+				    	    }
+				    	  }catch (Exception e) {
+						      continue;
+						    }
+			    	  }
 			      }
 		      }catch (Exception e) {
 			      System.out.println("only one");
