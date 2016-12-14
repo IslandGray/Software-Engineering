@@ -148,7 +148,7 @@
 						<td>${dev.language}</td>
 						<td>${dev.platform}</td>
 						<td>${dev.experience}年</td>
-						<td><a href="neederAddDev.action?devAccount=${dev.account}&projectID=${projectID}&inputEmail=${inputEmail}">邀请其加入项目</a></td>
+						<td><a href="neederInviteDev.action?devAccount=${dev.account}&Needer=${Needer}&projectID=${projectID}&inputEmail=${inputEmail}&name=${name}&platform=${platform}&education=${education}&price=${price}&experience=${experience}&time=${time}&num=${num}&tendernum=${tenderNum}&language=${language}">邀请其加入项目</a></td>
 					</tr>
 				</s:iterator>
 			   </tbody>
